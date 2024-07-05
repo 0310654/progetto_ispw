@@ -41,6 +41,8 @@ public class LoginUserView extends Application {
         // Bottone di login
         Button loginButton = new Button("Login");
         Label messageLabel = new Label();
+        Button registrationButton = new Button("Registrati");
+        Label message2Label = new Label();
 
         // Gestore dell'evento del bottone di login
         loginButton.setOnAction(event -> {
@@ -58,10 +60,15 @@ public class LoginUserView extends Application {
             }
         });
 
+        registrationButton.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance(primaryStage);
+            masterView.showRegistrazioneUserView();
+
+        });
         // Layout
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll(emailLabel, emailField, passwordLabel, passwordField, loginButton, messageLabel);
+        vbox.getChildren().addAll(emailLabel, emailField, passwordLabel, passwordField, loginButton, registrationButton, messageLabel);
 
         // Scena
         Scene scene = new Scene(vbox, 300, 200);

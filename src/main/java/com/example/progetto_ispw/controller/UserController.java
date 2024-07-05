@@ -22,8 +22,9 @@ public class UserController implements Controller {
                 attributi.get(3),
                 attributi.get(4),
                 attributi.get(5),
-                attributi.get(6)
-                );
+                attributi.get(6),
+                attributi.get(7)
+        );
         this.uview = new UserView();
         this.udao = new UserDAO(connection);
 
