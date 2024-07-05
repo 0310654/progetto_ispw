@@ -2,7 +2,7 @@ package com.example.progetto_ispw.view;
 
 import java.util.ArrayList;
 
-public class UserView {
+public class UserView extends ClassView {
     public int showMenu() {
         //TODO inserire azioni user
         System.out.println("inserire azione tramite valore:\n" +
@@ -14,7 +14,7 @@ public class UserView {
                 "5 - cambia il ruolo"*/);
 
         String action;
-        while (true) {
+        /*while (true) {
             action = getInput("");
             try {
                 int action_int = Integer.parseInt(action);
@@ -26,7 +26,8 @@ public class UserView {
             } catch (NumberFormatException e) {
                 System.out.println("l'input deve essere un numero, inserire un valore ammissibile");
             }
-        }
+        }*/
+        return 0;
     }
 
 
