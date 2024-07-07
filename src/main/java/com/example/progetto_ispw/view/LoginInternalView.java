@@ -11,14 +11,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-import static javafx.application.Application.launch;
+public class LoginInternalView extends Application {
 
-public class LoginUserView extends Application {
     private Stage primaryStage;
 
-    public LoginUserView() {
+    public LoginInternalView() {
     }
 
     @Override
@@ -27,47 +25,36 @@ public class LoginUserView extends Application {
         this.primaryStage = stage;
         ArrayList<String> result = new ArrayList<>();
 
-        primaryStage.setTitle("Login User");
+        primaryStage.setTitle("Login User Interno");
 
         // Creazione dei campi di input
-        Label emailLabel = new Label("Email:");
-        TextField emailField = new TextField();
-        emailField.setPromptText("Inserisci la tua email");
-
-        Label passwordLabel = new Label("Password:");
-        PasswordField passwordField = new PasswordField();
-        passwordField.setPromptText("Inserisci la tua password");
+        Label tokenLabel = new Label("Token:");
+        TextField tokenField = new TextField();
+        tokenField.setPromptText("Inserisci token di accesso:");
 
         // Bottone di login
         Button loginButton = new Button("Login");
         Label messageLabel = new Label();
-        Button registrationButton = new Button("Registrati");
 
         // Gestore dell'evento del bottone di login
         loginButton.setOnAction(event -> {
-            String email = emailField.getText();
-            String password = passwordField.getText();
+            String token = tokenField.getText();
 
-            if (email.isEmpty() || password.isEmpty()) {
-                messageLabel.setText("Per favore, compila tutti i campi.");
+            if (token.isEmpty()) {
+                messageLabel.setText("Per favore, compila il campo.");
             } else {
-                if (validateLogin(email, password)) {
-                    MasterView masterView = MasterView.getInstance(primaryStage);
+                if (validateLogin(token)) {
+                    showSuccessScreen();
                 } else {
                     messageLabel.setText("Credenziali non valide. Riprova.");
                 }
             }
         });
 
-        registrationButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(primaryStage);
-            masterView.showRegistrazioneUserView();
-
-        });
         // Layout
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll(emailLabel, emailField, passwordLabel, passwordField, loginButton, registrationButton, messageLabel);
+        vbox.getChildren().addAll(tokenLabel, tokenField, loginButton, messageLabel);
 
         // Scena
         Scene scene = new Scene(vbox, 300, 200);
@@ -76,9 +63,9 @@ public class LoginUserView extends Application {
     }
 
     // Metodo per la validazione delle credenziali di login
-    private boolean validateLogin(String email, String password) {
+    private boolean validateLogin(String token) {
         // Sostituisci con la tua logica di autenticazione
-        return email.equals("test") && password.equals("password");
+        return token.equals("test");
     }
 
     private void showSuccessScreen() {
@@ -91,7 +78,4 @@ public class LoginUserView extends Application {
         primaryStage.setScene(successScene);
         primaryStage.show();
     }
-
-
 }
-
