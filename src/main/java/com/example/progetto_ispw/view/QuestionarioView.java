@@ -1,5 +1,7 @@
 package com.example.progetto_ispw.view;
 
+import com.example.progetto_ispw.controller.MasterController;
+import com.example.progetto_ispw.model.Questionario;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -14,56 +16,48 @@ import java.util.ArrayList;
 
 public class QuestionarioView extends Application {
 
-    private Stage primaryStage;
-
-    public QuestionarioView() {
-    }
 
     @Override
     public void start(Stage stage) throws Exception {
 
-        this.primaryStage = stage;
-        ArrayList<String> risposte = new ArrayList<>();
+        MasterController masterController = MasterController.getInstance();
+        Questionario questionario = masterController.getQuestionario();
 
+        stage.setTitle("Questionario");
 
-        primaryStage.setTitle("Questionario");
+        Label domandaLabel = new Label(questionario.getDomanda());
 
-        Label domandaLabel = new Label("preferisci i cani o i gatti");
+        VBox vbox = new VBox(10);
+        vbox.setPadding(new Insets(20, 20, 20, 20));
+        vbox.getChildren().add(domandaLabel);
+        for (String risposta: questionario.getPossibiliRisposte()) {
+            Button voteButton = new Button(risposta);
+            voteButton.setOnAction(event -> {
+                //TODO
+                masterController.votedQuest(risposta);
+            });
+            vbox.getChildren().add(voteButton);
+        }
 
-        Button rispostaAButton = new Button("Cane");
-        Button rispostaBButton = new Button("Gatto");
-        Button confirmationButton = new Button("Conferma la risposta");
         Button backButton = new Button("Torna alla home page");
-        Label messageLabel = new Label();
+        Button skipButton = new Button("Prossima domanda");
 
-
-        rispostaAButton.setOnAction(event -> {
-            //TODO aggiungere al corrispettivo questionario un array di risposte cosi poi poterne calcolare la statistica
-
-        });
-
-        rispostaBButton.setOnAction(event -> {
-            //TODO aggiungere al corrispettivo questionario un array di risposte cosi poi poterne calcolare la statistica
-
-        });
-
-        confirmationButton.setOnAction(event -> {
-                messageLabel.setText("Votazione confermata");
-        });
         backButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(primaryStage);
+            MasterView masterView = MasterView.getInstance(stage);
             masterView.showHomePageView();
         });
 
-        // Layout
-        VBox vbox = new VBox(10);
-        vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll(domandaLabel, rispostaAButton, rispostaBButton, confirmationButton, backButton, messageLabel );
+        skipButton.setOnAction(event -> {
+            MasterController.getInstance().nextQuest();
+            MasterView.getInstance(stage).showQuestionarioView();
+        });
+
+        vbox.getChildren().addAll(backButton, skipButton );
 
         // Scena
         Scene scene = new Scene(vbox, 300, 200);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

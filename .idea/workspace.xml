@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="Commit3" />
+    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="add view files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/MasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/MasterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/Domande.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/Questionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/Questionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/Risposte.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/Statistiche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/Statistiche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/HomePageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/HomePageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginInternalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginInternalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginUserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginUserView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/MasterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/MasterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/QuestionarioView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/QuestionarioView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;0310654&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/0310654/progetto_ispw.git&quot;,
+    &quot;accountId&quot;: &quot;a2ab0725-9af0-44ec-bff1-1b8699585591&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -34,15 +59,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HomePageView.executor": "Run",
+    "Application.LoginInternalView.executor": "Run",
+    "Application.QuestionariConsigliatiView.executor": "Run",
+    "Application.QuestionarioView.executor": "Run",
+    "Application.RicercaView.executor": "Run",
+    "Application.startFromLogin.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ariannadaniello/IdeaProjects/progetto_ispw",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -56,6 +89,23 @@
       <recent name="com.example.progetto_ispw" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="startFromLogin" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.progetto_ispw.main" />
+      <module name="progetto_ispw" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,7 +115,10 @@
       <option name="presentableId" value="Default" />
       <updated>1720096062187</updated>
       <workItem from="1720096063386" duration="5843000" />
-      <workItem from="1720170545682" duration="21650000" />
+      <workItem from="1720170545682" duration="21990000" />
+      <workItem from="1720343577047" duration="233000" />
+      <workItem from="1720343861581" duration="55000" />
+      <workItem from="1720343923720" duration="9576000" />
     </task>
     <task id="LOCAL-00001" summary="Commit1">
       <option name="closed" value="true" />
@@ -99,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720271632515</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add view files">
+      <option name="closed" value="true" />
+      <created>1720343358825</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720343358825</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +171,7 @@
     <MESSAGE value="Commit2" />
     <MESSAGE value="Commit2conScrollPane" />
     <MESSAGE value="Commit3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit3" />
+    <MESSAGE value="add view files" />
+    <option name="LAST_COMMIT_MESSAGE" value="add view files" />
   </component>
 </project>

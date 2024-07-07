@@ -66,4 +66,12 @@ public class MasterView {
         }
     }
 
+    public void showQuestionarioView() {
+        QuestionarioView qv = new QuestionarioView();
+        try {
+            qv.start(this.stage);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

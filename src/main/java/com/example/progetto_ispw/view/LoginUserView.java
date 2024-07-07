@@ -1,5 +1,6 @@
 package com.example.progetto_ispw.view;
 
+import com.example.progetto_ispw.controller.MasterController;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -51,8 +52,11 @@ public class LoginUserView extends Application {
             if (email.isEmpty() || password.isEmpty()) {
                 messageLabel.setText("Per favore, compila tutti i campi.");
             } else {
-                if (validateLogin(email, password)) {
+                MasterController masterController = MasterController.getInstance();
+                boolean utenteTrovato = masterController.login(email, password);
+                if (utenteTrovato) {
                     MasterView masterView = MasterView.getInstance(primaryStage);
+                    masterView.showHomePageView();
                 } else {
                     messageLabel.setText("Credenziali non valide. Riprova.");
                 }

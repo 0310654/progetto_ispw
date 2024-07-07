@@ -1,5 +1,6 @@
 package com.example.progetto_ispw.view;
 
+import com.example.progetto_ispw.controller.MasterController;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -43,8 +44,11 @@ public class LoginInternalView extends Application {
             if (token.isEmpty()) {
                 messageLabel.setText("Per favore, compila il campo.");
             } else {
-                if (validateLogin(token)) {
-                    showSuccessScreen();
+                MasterController masterController = MasterController.getInstance();
+                boolean utenteTrovato = masterController.internalLogin(token);
+                if (utenteTrovato) {
+                    MasterView masterView = MasterView.getInstance(primaryStage);
+                    masterView.showHomePageView();
                 } else {
                     messageLabel.setText("Credenziali non valide. Riprova.");
                 }
@@ -62,11 +66,7 @@ public class LoginInternalView extends Application {
         primaryStage.show();
     }
 
-    // Metodo per la validazione delle credenziali di login
-    private boolean validateLogin(String token) {
-        // Sostituisci con la tua logica di autenticazione
-        return token.equals("test");
-    }
+
 
     private void showSuccessScreen() {
         Label successLabel = new Label("Successo, login effettuato");
