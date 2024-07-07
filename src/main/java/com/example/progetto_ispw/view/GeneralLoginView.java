@@ -28,12 +28,12 @@ public class GeneralLoginView extends Application {
 
         // Gestore dell'evento del bottone di login
         loginButtonUser.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(stage);
+            MasterView masterView = MasterView.getInstance();
             masterView.showLoginView();
         });
 
         loginButtonInternal.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(stage);
+            MasterView masterView = MasterView.getInstance();
             masterView.showInternalLoginView();
         });
 

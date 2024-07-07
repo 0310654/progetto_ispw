@@ -1,5 +1,8 @@
 package com.example.progetto_ispw.view;
 
+import com.example.progetto_ispw.controller.MasterController;
+import com.example.progetto_ispw.model.Questionario;
+import com.example.progetto_ispw.model.User;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -11,7 +14,6 @@ import java.util.ArrayList;
 
 public class SchedaPersonaleView extends Application {
 
-    private Stage stage;
 
     public SchedaPersonaleView() {
     }
@@ -24,35 +26,32 @@ public class SchedaPersonaleView extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        this.stage = stage;
-        ArrayList<String> result = new ArrayList<>();
+        User user = MasterController.getInstance().getCurrentUser();
 
         stage.setTitle("Scheda");
 
-        Label usernameLabel = new Label("Nome: " + "username");
-        Label bioLabel = new Label("Email: " + "bio");
+        Label usernameLabel = new Label(user.getUsername());
+        Label bioLabel = new Label(user.getBio());
 
-        // Bottone
+        /*Button modificaBioButton = new Button("Modifica bio");
+        modificaBioButton.setOnAction(event -> {
+            //TODO
+        });*/
+
         Button questionariCollaboratiButton = new Button("Questionari a cui hai collaborato");
-        Button questionariCondivisiButton = new Button("Questionari che hai condiviso");
-        Button modificaBioButton = new Button("Modifica bio");
-        Label messageLabel = new Label();
 
         // Gestore dell'evento del bottone
         questionariCollaboratiButton.setOnAction(event -> {
-            //TODO mostrare i questionari che saranno aggiunti tramite funzione specifica: "addQuestionariCollaborati"
+            MasterController.getInstance().recuperaCollab();
+            MasterView.getInstance().showCollabsView();
         });
 
-        questionariCondivisiButton.setOnAction(event -> {
-            //TODO mostrare i questionari che saranno aggiunti tramite funzione specifica: "addQuestionariCondivisi"
-        });
-        modificaBioButton.setOnAction(event -> {
-        });
+
 
         // Layout
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll(usernameLabel, bioLabel, messageLabel);
+        vbox.getChildren().addAll(usernameLabel, bioLabel, questionariCollaboratiButton);
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(vbox);

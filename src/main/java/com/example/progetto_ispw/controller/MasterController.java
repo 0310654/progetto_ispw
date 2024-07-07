@@ -3,12 +3,18 @@ package com.example.progetto_ispw.controller;
 
 import com.example.progetto_ispw.model.Questionario;
 import com.example.progetto_ispw.model.Statistiche;
+import com.example.progetto_ispw.model.User;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MasterController {
     private static MasterController instance;
     private Questionario questionario;
+    private User user;
+    private ArrayList<Questionario> collabs;
+
 
 
     private MasterController() {}
@@ -33,54 +39,15 @@ public class MasterController {
     public ArrayList<Questionario> getQuestSearched() {
         //TODO creare arraylist di questionari in base alla ricerca
         ArrayList<Questionario> listaQuest = new ArrayList<>();
-        String codice = "001";
-        String argomento = "animali";
-        String domanda = "preferisci i cani o i gatti?";
-        ArrayList<String> possibiliRisposte = new ArrayList<>();
-        possibiliRisposte.add("cani");
-        possibiliRisposte.add("gatti");
-        Statistiche statistiche = new Statistiche();
-        statistiche.addCategoria("stato", "italia");
-        //quante persone hanno votato la risposta
-        statistiche.addRisposte("cani", 200);
-        statistiche.addRisposte("gatti", 100);
-        ArrayList<Statistiche> listaStatistiche = new ArrayList<>();
-        listaStatistiche.add(statistiche);
-        Questionario q = new Questionario(codice, argomento, domanda, possibiliRisposte, listaStatistiche);
-        listaQuest.add(q);
-        String codice2 = "002";
-        String argomento2 = "tempo libero";
-        String domanda2 = "preferisci mare o montagna?";
-        ArrayList<String> possibiliRisposte2 = new ArrayList<>();
-        possibiliRisposte.add("mare");
-        possibiliRisposte.add("montagna");
-        Statistiche statistiche2 = new Statistiche();
-        statistiche.addCategoria("stato", "italia");
-        //quante persone hanno votato la risposta
-        statistiche.addRisposte("mare", 200);
-        statistiche.addRisposte("montagna", 100);
-        ArrayList<Statistiche> listaStatistiche2 = new ArrayList<>();
-        listaStatistiche2.add(statistiche2);
-        Questionario q2 = new Questionario(codice2, argomento2, domanda2, possibiliRisposte2, listaStatistiche2);
-        listaQuest.add(q2);
+        createQuest();
+        listaQuest.add(this.questionario);
+        listaQuest.add(this.questionario);
         return listaQuest;
     }
 
     public Questionario getQuestionario() {
-        String codice = "001";
-        String argomento = "animali";
-        String domanda = "preferisci i cani o i gatti?";
-        ArrayList<String> possibiliRisposte = new ArrayList<>();
-        possibiliRisposte.add("cani");
-        possibiliRisposte.add("gatti");
-        Statistiche statistiche = new Statistiche();
-        statistiche.addCategoria("stato", "italia");
-        //quante persone hanno votato la risposta
-        statistiche.addRisposte("cani", 200);
-        statistiche.addRisposte("gatti", 100);
-        ArrayList<Statistiche> listaStatistiche = new ArrayList<>();
-        listaStatistiche.add(statistiche);
-        this.questionario = new Questionario(codice, argomento, domanda, possibiliRisposte, listaStatistiche);
+        //TODO
+        createQuest();
         return questionario;
     }
 
@@ -97,5 +64,57 @@ public class MasterController {
     public void nextQuest() {
        //TODO
         System.out.println("carico prossimo questionario");
+    }
+
+    public User getCurrentUser() {
+        //TODO
+        createUser();
+        return user;
+    }
+
+    private void createQuest(){
+        String codice = "001";
+        String argomento = "animali";
+        String domanda = "preferisci i cani o i gatti?";
+        ArrayList<String> possibiliRisposte = new ArrayList<>();
+        possibiliRisposte.add("cani");
+        possibiliRisposte.add("gatti");
+        Statistiche statistiche = new Statistiche();
+        statistiche.addCategoria("stato", "italia");
+        //quante persone hanno votato la risposta
+        statistiche.addRisposte("cani", 200);
+        statistiche.addRisposte("gatti", 100);
+        ArrayList<Statistiche> listaStatistiche = new ArrayList<>();
+        listaStatistiche.add(statistiche);
+        this.questionario = new Questionario(codice, argomento, domanda, possibiliRisposte, listaStatistiche);
+
+    }
+
+    private void createUser(){
+        String username = "pippo"; //Il nome utente univoco scelto dall'utente.
+        String nome = "pippo ciao";
+        String email = "pippo@gmail.com";
+        String password = "pass";
+        String cellulare = "333";
+        String dataDiNascita = "2020-03-03";
+        String bio = "ciao";
+        this.user = new User(username, nome, email, password, cellulare, dataDiNascita, bio);
+    }
+
+    public void recuperaCollab() {
+        //TODO
+        createQuest();
+        ArrayList<Questionario> listaQuest = new ArrayList<>();
+        listaQuest.add(this.questionario);
+        this.collabs = listaQuest;
+    }
+
+    public ArrayList<Pair> getCollabs() {
+        //TODO
+        createQuest();
+        Pair<Questionario, String> collab = new Pair<>( this.questionario, "pippo");
+        ArrayList<Pair> collabs = new ArrayList<>();
+        collabs.add(collab);
+        return collabs;
     }
 }

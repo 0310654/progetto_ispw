@@ -40,7 +40,7 @@ public class StatisticaView extends Application{
         });
 
         backButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(primaryStage);
+            MasterView masterView = MasterView.getInstance();
             masterView.showHomePageView();
         });
 

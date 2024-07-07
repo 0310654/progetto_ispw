@@ -21,7 +21,8 @@ public class main extends Application {
         stage.setWidth(stageWidth);
         stage.setHeight(stageHeight);*/
 
-        MasterView masterView = MasterView.getInstance(stage);
+        MasterView masterView = MasterView.getInstance();
+        masterView.setStage(stage);
         masterView.showGeneralLoginView();
     }
 

@@ -5,16 +5,20 @@ import javafx.stage.Stage;
 public class MasterView {
     private Stage stage;
     private static MasterView instance;
-    private MasterView(Stage stage) {
-        this.stage = stage;
+    private MasterView() {
     }
 
-    public static MasterView getInstance(Stage stage) {
+    public static MasterView getInstance() {
         if(instance==null) {
-            instance = new MasterView(stage);
+            instance = new MasterView();
         }
         return instance;
     }
+
+    public void setStage(Stage stage){
+        this.stage = stage;
+    }
+
     public void showLoginView() {
         LoginUserView luv = new LoginUserView();
         try {
@@ -73,5 +77,8 @@ public class MasterView {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void showCollabsView() {
     }
 }

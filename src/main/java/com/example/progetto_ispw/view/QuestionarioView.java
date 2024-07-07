@@ -43,13 +43,13 @@ public class QuestionarioView extends Application {
         Button skipButton = new Button("Prossima domanda");
 
         backButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(stage);
+            MasterView masterView = MasterView.getInstance();
             masterView.showHomePageView();
         });
 
         skipButton.setOnAction(event -> {
             MasterController.getInstance().nextQuest();
-            MasterView.getInstance(stage).showQuestionarioView();
+            MasterView.getInstance().showQuestionarioView();
         });
 
         vbox.getChildren().addAll(backButton, skipButton );

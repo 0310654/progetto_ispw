@@ -33,7 +33,7 @@ public class RicercaView extends Application {
             voteButton.setOnAction(event -> {
                 //TODO: voglio andare alla view di votazione del questionario q
                 masterController.goToQuest(q);
-                MasterView.getInstance(stage).showQuestionarioView();
+                MasterView.getInstance().showQuestionarioView();
             });
 
             VBox questionBox = new VBox(5);

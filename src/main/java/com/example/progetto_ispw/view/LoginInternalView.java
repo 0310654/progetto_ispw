@@ -47,7 +47,7 @@ public class LoginInternalView extends Application {
                 MasterController masterController = MasterController.getInstance();
                 boolean utenteTrovato = masterController.internalLogin(token);
                 if (utenteTrovato) {
-                    MasterView masterView = MasterView.getInstance(primaryStage);
+                    MasterView masterView = MasterView.getInstance();
                     masterView.showHomePageView();
                 } else {
                     messageLabel.setText("Credenziali non valide. Riprova.");

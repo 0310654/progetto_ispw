@@ -31,18 +31,18 @@ public class HomePageView extends Application {
 
         // Setting button actions
         schedaPersonaleButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(stage);
+            MasterView masterView = MasterView.getInstance();
             masterView.showSchedaPersonaleView();
         });
 
         votaButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(stage);
+            MasterView masterView = MasterView.getInstance();
             //TODO crea showQuestionarioView
             //masterView.showQuestionarioView();
         });
 
         statisticheButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(stage);
+            MasterView masterView = MasterView.getInstance();
             //TODO crea showStatisticheView
             //masterView.showStatisticheView();
         });

@@ -55,7 +55,7 @@ public class LoginUserView extends Application {
                 MasterController masterController = MasterController.getInstance();
                 boolean utenteTrovato = masterController.login(email, password);
                 if (utenteTrovato) {
-                    MasterView masterView = MasterView.getInstance(primaryStage);
+                    MasterView masterView = MasterView.getInstance();
                     masterView.showHomePageView();
                 } else {
                     messageLabel.setText("Credenziali non valide. Riprova.");
@@ -64,7 +64,7 @@ public class LoginUserView extends Application {
         });
 
         registrationButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance(primaryStage);
+            MasterView masterView = MasterView.getInstance();
             masterView.showRegistrazioneUserView();
 
         });
