@@ -29,6 +29,12 @@ public class RicercaView extends Application {
 
             Label domandaLabel = new Label(q.getDomanda());
 
+            Button backButton = new Button("Torna alla home page");
+            backButton.setOnAction(event -> {
+                MasterView masterView = MasterView.getInstance();
+                masterView.showHomePageView();
+            });
+
             Button voteButton = new Button("Vota");
             voteButton.setOnAction(event -> {
                 //TODO: voglio andare alla view di votazione del questionario q

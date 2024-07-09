@@ -36,6 +36,11 @@ public class LoginInternalView extends Application {
         // Bottone di login
         Button loginButton = new Button("Login");
         Label messageLabel = new Label();
+        Button backButton = new Button("Torna alla home page");
+        backButton.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance();
+            masterView.showHomePageView();
+        });
 
         // Gestore dell'evento del bottone di login
         loginButton.setOnAction(event -> {

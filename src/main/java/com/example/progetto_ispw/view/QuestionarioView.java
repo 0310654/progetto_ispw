@@ -40,13 +40,12 @@ public class QuestionarioView extends Application {
         }
 
         Button backButton = new Button("Torna alla home page");
-        Button skipButton = new Button("Prossima domanda");
-
         backButton.setOnAction(event -> {
             MasterView masterView = MasterView.getInstance();
             masterView.showHomePageView();
         });
 
+        Button skipButton = new Button("Prossima domanda");
         skipButton.setOnAction(event -> {
             MasterController.getInstance().nextQuest();
             MasterView.getInstance().showQuestionarioView();

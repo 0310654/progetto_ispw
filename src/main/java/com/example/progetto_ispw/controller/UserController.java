@@ -29,19 +29,23 @@ public class UserController implements Controller {
         this.udao = new UserDAO(connection);
 
         int choice = -1;
-        while (choice != 0) {
-            choice = uview.showMenu();
-//TODO scrivere le funzioni dello user
-            switch (choice) {
-                case 0:
-                    System.out.println("Chiusura\n");
-                    break;
-                case 1:
-                    //cambioturni();
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + choice);
-            }
-        }
     }
+
+    public User getCurrentUser() {
+        //TODO
+        createUser();
+        return user;
+    }
+
+    public void createUser(){
+        String username = "pippo"; //Il nome utente univoco scelto dall'utente.
+        String nome = "pippo ciao";
+        String email = "pippo@gmail.com";
+        String password = "pass";
+        String cellulare = "333";
+        String dataDiNascita = "2020-03-03";
+        String bio = "ciao";
+        this.user = new User(username, nome, email, password, cellulare, dataDiNascita, bio);
+    }
+
 }

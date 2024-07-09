@@ -39,6 +39,12 @@ public class SchedaPersonaleView extends Application {
         });*/
 
         Button questionariCollaboratiButton = new Button("Questionari a cui hai collaborato");
+        Button backButton = new Button("Torna alla home page");
+
+        backButton.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance();
+            masterView.showHomePageView();
+        });
 
         // Gestore dell'evento del bottone
         questionariCollaboratiButton.setOnAction(event -> {

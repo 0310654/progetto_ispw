@@ -34,6 +34,12 @@ public class CollabsView extends Application {
             vbox.getChildren().addAll(new Label(q.getDomanda()), new Label(r));
         }
 
+        Button backButton = new Button("Torna alla home page");
+        backButton.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance();
+            masterView.showHomePageView();
+        });
+
         Scene scene = new Scene(vbox, 300, 200);
         stage.setScene(scene);
         stage.show();

@@ -12,18 +12,18 @@ public class LoginUserController {
     private ArrayList<String> attributi;
     private Connection connection;
 
-    public LoginUserController(Connection connection){
+
+    public LoginUserController() {
         this.connection = connection;
-        start();
+        login();
     }
 
-    //@Override
-    public void start() {
-        LoginUserDAO loginDAO = new LoginUserDAO(connection);
-
-    }
 
     public ArrayList<String> getAttributi(){
         return this.attributi;
+    }
+
+    public void login() {
+        LoginUserDAO loginDAO = new LoginUserDAO(connection);
     }
 }

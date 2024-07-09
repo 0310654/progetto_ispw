@@ -44,6 +44,12 @@ public class LoginUserView extends Application {
         Label messageLabel = new Label();
         Button registrationButton = new Button("Registrati");
 
+        Button backButton = new Button("Torna alla home page");
+        backButton.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance();
+            masterView.showHomePageView();
+        });
+
         // Gestore dell'evento del bottone di login
         loginButton.setOnAction(event -> {
             String email = emailField.getText();

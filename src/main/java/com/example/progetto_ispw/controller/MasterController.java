@@ -7,13 +7,12 @@ import com.example.progetto_ispw.model.User;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
 
 public class MasterController {
+
     private static MasterController instance;
-    private Questionario questionario;
-    private User user;
-    private ArrayList<Questionario> collabs;
+    QuestionarioController qc = new QuestionarioController();
 
 
 
@@ -27,94 +26,64 @@ public class MasterController {
     }
 
     public boolean login(String email, String password) {
-        //TODO
+        LoginUserController luc = new LoginUserController();
+        luc.login();
         return true;
     }
 
-    public boolean internalLogin(String token) {
-        //TODO
+    public boolean InternalLogin(String token) {
+        InternalLoginController ilc = new InternalLoginController();
+        ilc.InternalLogin();
         return true;
     }
 
     public ArrayList<Questionario> getQuestSearched() {
-        //TODO creare arraylist di questionari in base alla ricerca
-        ArrayList<Questionario> listaQuest = new ArrayList<>();
-        createQuest();
-        listaQuest.add(this.questionario);
-        listaQuest.add(this.questionario);
-        return listaQuest;
+        qc.getQuestSearched();
+        return null;
     }
 
     public Questionario getQuestionario() {
-        //TODO
-        createQuest();
-        return questionario;
+        qc.getQuestionario();
+        return qc.getQuestionario();
     }
 
     public void votedQuest(String risposta) {
-        //TODO
-        System.out.println(risposta);
+        qc.votedQuest(risposta);
     }
 
     public void goToQuest(Questionario q) {
-        //TODO
-        System.out.println("Seleziono " + q.getDomanda());
+        qc.goToQuest(q);
     }
 
     public void nextQuest() {
-       //TODO
-        System.out.println("carico prossimo questionario");
+       qc.nextQuest();
+    }
+
+    public void createQuest() {
+        qc.createQuest();
     }
 
     public User getCurrentUser() {
-        //TODO
-        createUser();
-        return user;
-    }
-
-    private void createQuest(){
-        String codice = "001";
-        String argomento = "animali";
-        String domanda = "preferisci i cani o i gatti?";
-        ArrayList<String> possibiliRisposte = new ArrayList<>();
-        possibiliRisposte.add("cani");
-        possibiliRisposte.add("gatti");
-        Statistiche statistiche = new Statistiche();
-        statistiche.addCategoria("stato", "italia");
-        //quante persone hanno votato la risposta
-        statistiche.addRisposte("cani", 200);
-        statistiche.addRisposte("gatti", 100);
-        ArrayList<Statistiche> listaStatistiche = new ArrayList<>();
-        listaStatistiche.add(statistiche);
-        this.questionario = new Questionario(codice, argomento, domanda, possibiliRisposte, listaStatistiche);
-
+        UserController uc = new UserController();
+        uc.getCurrentUser();
+        return uc.getCurrentUser();
     }
 
     private void createUser(){
-        String username = "pippo"; //Il nome utente univoco scelto dall'utente.
-        String nome = "pippo ciao";
-        String email = "pippo@gmail.com";
-        String password = "pass";
-        String cellulare = "333";
-        String dataDiNascita = "2020-03-03";
-        String bio = "ciao";
-        this.user = new User(username, nome, email, password, cellulare, dataDiNascita, bio);
+        UserController uc = new UserController();
+        uc.createUser();
     }
 
     public void recuperaCollab() {
-        //TODO
-        createQuest();
-        ArrayList<Questionario> listaQuest = new ArrayList<>();
-        listaQuest.add(this.questionario);
-        this.collabs = listaQuest;
+        CollabsController cc = new CollabsController();
+        cc.recuperaCollab();
     }
 
     public ArrayList<Pair> getCollabs() {
-        //TODO
-        createQuest();
-        Pair<Questionario, String> collab = new Pair<>( this.questionario, "pippo");
-        ArrayList<Pair> collabs = new ArrayList<>();
-        collabs.add(collab);
-        return collabs;
+        CollabsController cc = new CollabsController();
+        cc.recuperaCollab();
+        return cc.getCollabs();
     }
+
+
 }
