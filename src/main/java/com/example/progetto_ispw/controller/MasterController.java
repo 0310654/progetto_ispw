@@ -31,11 +31,6 @@ public class MasterController {
         return true;
     }
 
-    public boolean InternalLogin(String token) {
-        InternalLoginController ilc = new InternalLoginController();
-        ilc.InternalLogin();
-        return true;
-    }
 
     public ArrayList<Questionario> getQuestSearched() {
         qc.getQuestSearched();
@@ -85,5 +80,9 @@ public class MasterController {
         return cc.getCollabs();
     }
 
-
+    public boolean internalLogin(String token) {
+        InternalLoginController ilc = new InternalLoginController();
+        ilc.InternalLogin();
+        return true;
+    }
 }

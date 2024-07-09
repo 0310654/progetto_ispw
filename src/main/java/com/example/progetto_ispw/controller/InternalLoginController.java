@@ -13,10 +13,10 @@ public class InternalLoginController {
 
     public InternalLoginController() {
         this.connection = connection;
-        InternalLogin();
+        internalLogin();
     }
 
-    public void InternalLogin() {
+    public void internalLogin() {
         InternalLoginDAO InternalLoginDAO = new InternalLoginDAO();
     }
 }
