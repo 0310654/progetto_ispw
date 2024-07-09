@@ -17,6 +17,6 @@ public class InternalLoginController {
     }
 
     public void internalLogin() {
-        InternalLoginDAO InternalLoginDAO = new InternalLoginDAO();
+        InternalLoginDAO internalLoginDAO = new InternalLoginDAO(connection);
     }
 }

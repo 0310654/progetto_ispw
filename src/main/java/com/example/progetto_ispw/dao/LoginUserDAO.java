@@ -14,7 +14,7 @@ public class LoginUserDAO {
         this.connection = connection;
     }
 
-    public ArrayList<String> login(String user, String pass){
+    public ArrayList<String> loginUser(String user, String pass){
         String username;
         String nome;
         String email;
