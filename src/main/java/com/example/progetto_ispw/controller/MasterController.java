@@ -1,8 +1,9 @@
 package com.example.progetto_ispw.controller;
 
 
+import com.example.progetto_ispw.dao.InternalLoginDAO;
+import com.example.progetto_ispw.dao.LoginUserDAO;
 import com.example.progetto_ispw.model.Questionario;
-import com.example.progetto_ispw.model.Statistiche;
 import com.example.progetto_ispw.model.User;
 import javafx.util.Pair;
 
@@ -25,10 +26,10 @@ public class MasterController {
         return instance;
     }
 
-    public boolean login(String email, String password) {
+    public LoginUserDAO login(String email, String password) {
         LoginUserController luc = new LoginUserController();
         luc.login();
-        return true;
+        return luc.login();
     }
 
 
@@ -80,9 +81,9 @@ public class MasterController {
         return cc.getCollabs();
     }
 
-    public boolean internalLogin(String token) {
+    public InternalLoginDAO internalLogin(String token) {
         InternalLoginController ilc = new InternalLoginController();
         ilc.internalLogin();
-        return true;
+        return ilc.internalLogin();
     }
 }

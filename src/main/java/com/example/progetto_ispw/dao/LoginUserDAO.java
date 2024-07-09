@@ -14,7 +14,7 @@ public class LoginUserDAO {
         this.connection = connection;
     }
 
-    public ArrayList<String> loginUser(String user, String pass){
+    public boolean loginUser(String user, String pass){
         String username;
         String nome;
         String email;
@@ -50,7 +50,7 @@ public class LoginUserDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return attributi;
+        return true;
     }
 }
 

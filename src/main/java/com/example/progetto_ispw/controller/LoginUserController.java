@@ -23,7 +23,8 @@ public class LoginUserController {
         return this.attributi;
     }
 
-    public void login() {
+    public LoginUserDAO login() {
         LoginUserDAO loginDAO = new LoginUserDAO(connection);
+        return loginDAO;
     }
 }

@@ -13,7 +13,7 @@ public class InternalLoginDAO {
         this.connection = connection;
     }
 
-    public ArrayList<String> internalLogin(String token){
+    public boolean internalLogin(String token){
         String nome;
         String cognome;
         String email;
@@ -42,6 +42,6 @@ public class InternalLoginDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return attributi;
+        return true;
     }
 }

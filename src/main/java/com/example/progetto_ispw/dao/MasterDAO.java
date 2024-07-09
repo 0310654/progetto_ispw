@@ -22,14 +22,14 @@ public class MasterDAO {
         Connection connection = this.connection;
         LoginUserDAO lud = new LoginUserDAO(connection);
         lud.loginUser(email, password);
-        return true;
+        return lud.loginUser(email, password);
     }
 
     public boolean internalLogin(String token) {
         Connection connection = this.connection;
         InternalLoginDAO ild = new InternalLoginDAO(connection);
         ild.internalLogin(token);
-        return true;
+        return ild.internalLogin(token);
     }
 
 
