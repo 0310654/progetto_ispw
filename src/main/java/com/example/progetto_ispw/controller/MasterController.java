@@ -82,7 +82,7 @@ public class MasterController {
 
     public boolean internalLogin(String token) {
         InternalLoginController ilc = new InternalLoginController();
-        ilc.InternalLogin();
+        ilc.internalLogin();
         return true;
     }
 }
