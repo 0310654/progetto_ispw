@@ -11,6 +11,10 @@ public class MasterDAO {
 
     private MasterDAO() {}
 
+    public void setConnection(Connection connection) {
+        this.connection = DBConnectionDAO.getConnection();
+    }
+
     public static MasterDAO getInstance() {
         if(instance==null) {
             instance = new MasterDAO();
@@ -31,6 +35,5 @@ public class MasterDAO {
         ild.internalLogin(token);
         return ild.internalLogin(token);
     }
-
 
 }

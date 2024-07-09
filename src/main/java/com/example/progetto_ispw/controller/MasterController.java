@@ -7,6 +7,7 @@ import com.example.progetto_ispw.model.Questionario;
 import com.example.progetto_ispw.model.User;
 import javafx.util.Pair;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 
 
@@ -26,8 +27,12 @@ public class MasterController {
         return instance;
     }
 
+    public static Connection getConnection() {
+
+    }
+
     public LoginUserDAO login(String email, String password) {
-        LoginUserController luc = new LoginUserController();
+        LoginUserController luc = new LoginUserController(dbConnectionDAO.getConnection());
         luc.login();
         return luc.login();
     }

@@ -21,7 +21,7 @@ public class DBConnectionDAO {
         }
     }
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         return connection;
     }
 }
