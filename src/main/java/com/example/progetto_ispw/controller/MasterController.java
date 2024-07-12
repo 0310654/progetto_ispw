@@ -15,9 +15,6 @@ import java.util.ArrayList;
 public class MasterController {
 
     private static MasterController instance;
-    QuestionarioController qc = new QuestionarioController();
-
-
 
     private MasterController() {}
 
@@ -35,29 +32,28 @@ public class MasterController {
 
     //restituisce una lista di questionari in base alla parola cercata nella barra nella homepage
     public ArrayList<Questionario> getQuestSearched() {
-        qc.getQuestSearched();
+        QuestionarioController.getInstance().getQuestSearched();
         return null;
     }
     //restituisce il questionario a cui voglio votare
     public Questionario getQuestionario() {
-        qc.getQuestionario();
-        return qc.getQuestionario();
+        return QuestionarioController.getInstance().getQuestionario();
     }
     //ho votato: salva la mia risposta
     public void votedQuest(String risposta) {
-        qc.votedQuest(risposta);
+        QuestionarioController.getInstance().votedQuest(risposta);
     }
 
     public void goToQuest(Questionario q) {
-        qc.goToQuest(q);
+        QuestionarioController.getInstance().goToQuest(q);
     }
 
     public void nextQuest() {
-       qc.nextQuest();
+       QuestionarioController.getInstance().nextQuest();
     }
 
     public void createQuest() {
-        qc.createQuest();
+        QuestionarioController.getInstance().createQuest();
     }
 
     public User getCurrentUser() {
@@ -85,7 +81,7 @@ public class MasterController {
 
     public boolean internalLogin(String token) {
         InternalLoginController ilc = new InternalLoginController();
-        ilc.internalLogin();
-        return ilc.internalLogin();
+        ilc.internalLogin(token);
+        return ilc.internalLogin(token);
     }
 }

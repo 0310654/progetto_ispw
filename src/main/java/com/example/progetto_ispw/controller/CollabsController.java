@@ -7,13 +7,12 @@ import java.util.ArrayList;
 
 public class CollabsController {
 
-    QuestionarioController qc = new QuestionarioController();
     private Questionario questionario;
     private ArrayList<Questionario> collabs;
 
     public void recuperaCollab() {
         //TODO
-        qc.createQuest();
+        QuestionarioController.getInstance().createQuest();
         ArrayList<Questionario> listaQuest = new ArrayList<>();
         listaQuest.add(this.questionario);
         this.collabs = listaQuest;
@@ -21,7 +20,7 @@ public class CollabsController {
 
     public ArrayList<Pair> getCollabs() {
         //TODO
-        qc.createQuest();
+        QuestionarioController.getInstance().createQuest();
         Pair<Questionario, String> collab = new Pair<>( this.questionario, "pippo");
         ArrayList<Pair> collabs = new ArrayList<>();
         collabs.add(collab);

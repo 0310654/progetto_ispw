@@ -37,10 +37,17 @@ public class GeneralLoginView extends Application {
             masterView.showInternalLoginView();
         });
 
+        //TODO cancella
+        Button directlogin = new Button("login diretto");
+        directlogin.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance();
+            masterView.showHomePageView();
+        });
+
         // Layout
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll(domandaLabel, loginButtonUser, loginButtonInternal);
+        vbox.getChildren().addAll(domandaLabel, loginButtonUser, loginButtonInternal, directlogin);
 
         // Scena
         Scene scene = new Scene(vbox, 300, 200);

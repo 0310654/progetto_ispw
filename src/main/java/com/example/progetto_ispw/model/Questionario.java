@@ -7,14 +7,14 @@ public class Questionario {
     private String argomento;
     private String domanda;
     private ArrayList<String> possibiliRisposte;
-    private ArrayList<Statistiche> statistiche;
+    //private ArrayList<Statistiche> statistiche;
 
-    public Questionario (String codice, String argomento, String domanda, ArrayList<String> possibiliRisposte, ArrayList<Statistiche> statistiche){
+    public Questionario (String codice, String argomento, String domanda, ArrayList<String> possibiliRisposte){
         this.codice = codice;
         this.argomento = argomento;
         this.domanda = domanda;
         this.possibiliRisposte = possibiliRisposte;
-        this.statistiche = statistiche;
+        //this.statistiche = statistiche;
 
     }
     public String getCodice(){
@@ -41,10 +41,10 @@ public class Questionario {
     public void setPossibiliRisposte(ArrayList<String> possibiliRisposte){
         this.possibiliRisposte = possibiliRisposte;
     }
-    public ArrayList<Statistiche> getStatistiche(){
+    /*public ArrayList<Statistiche> getStatistiche(){
         return this.statistiche;
     }
     public void setStatistiche(ArrayList<Statistiche> statistiche){
         this.statistiche = statistiche;
-    }
+    }*/
 }

@@ -13,7 +13,7 @@ public class InternalLoginDAO {
         this.connection = connection;
     }
 
-    public boolean internalLogin(String token){
+    public boolean loginInternalUser(String token){
         String nome;
         String cognome;
         String email;
@@ -22,7 +22,8 @@ public class InternalLoginDAO {
 
         CallableStatement cs = null;
         try {
-            cs = connection.prepareCall("{call login(?,?,?,?,?)}");
+            //TODO vedere come strutturare la parte dello user interno
+            cs = connection.prepareCall("{call loginInternal(?,?,?,?,?)}");
             cs.setString(1, token);
             cs.registerOutParameter(2, Types.VARCHAR);
             cs.registerOutParameter(3, Types.VARCHAR);
@@ -44,4 +45,6 @@ public class InternalLoginDAO {
         }
         return true;
     }
+
+
 }

@@ -25,38 +25,41 @@ public class QuestionarioView extends Application {
 
         stage.setTitle("Questionario");
 
-        Label domandaLabel = new Label(questionario.getDomanda());
+        if (questionario != null) {
+            Label domandaLabel = new Label(questionario.getDomanda());
 
-        VBox vbox = new VBox(10);
-        vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().add(domandaLabel);
-        for (String risposta: questionario.getPossibiliRisposte()) {
-            Button voteButton = new Button(risposta);
-            voteButton.setOnAction(event -> {
-                //TODO
-                masterController.votedQuest(risposta);
+            VBox vbox = new VBox(10);
+            vbox.setPadding(new Insets(20, 20, 20, 20));
+            vbox.getChildren().add(domandaLabel);
+            for (String risposta : questionario.getPossibiliRisposte()) {
+                System.out.println(risposta);
+                Button voteButton = new Button(risposta);
+                voteButton.setOnAction(event -> {
+                    //TODO
+                    masterController.votedQuest(risposta);
+                });
+                vbox.getChildren().add(voteButton);
+            }
+
+            Button backButton = new Button("Torna alla home page");
+            backButton.setOnAction(event -> {
+                MasterView masterView = MasterView.getInstance();
+                masterView.showHomePageView();
             });
-            vbox.getChildren().add(voteButton);
+
+            Button skipButton = new Button("Prossima domanda");
+            skipButton.setOnAction(event -> {
+                MasterController.getInstance().nextQuest();
+                MasterView.getInstance().showQuestionarioView();
+            });
+
+            vbox.getChildren().addAll(backButton, skipButton);
+
+            // Scena
+            Scene scene = new Scene(vbox, 300, 200);
+            stage.setScene(scene);
+            stage.show();
         }
-
-        Button backButton = new Button("Torna alla home page");
-        backButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance();
-            masterView.showHomePageView();
-        });
-
-        Button skipButton = new Button("Prossima domanda");
-        skipButton.setOnAction(event -> {
-            MasterController.getInstance().nextQuest();
-            MasterView.getInstance().showQuestionarioView();
-        });
-
-        vbox.getChildren().addAll(backButton, skipButton );
-
-        // Scena
-        Scene scene = new Scene(vbox, 300, 200);
-        stage.setScene(scene);
-        stage.show();
     }
 
 }

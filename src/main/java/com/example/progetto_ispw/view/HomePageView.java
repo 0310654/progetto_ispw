@@ -38,7 +38,7 @@ public class HomePageView extends Application {
         votaButton.setOnAction(event -> {
             MasterView masterView = MasterView.getInstance();
             //TODO crea showQuestionarioView
-            //masterView.showQuestionarioView();
+            masterView.showQuestionarioView();
         });
 
         statisticheButton.setOnAction(event -> {

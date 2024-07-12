@@ -1,8 +1,10 @@
 package com.example.progetto_ispw.dao;
 
 import com.example.progetto_ispw.controller.MasterController;
+import com.example.progetto_ispw.model.Questionario;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 public class MasterDAO {
 
@@ -30,13 +32,14 @@ public class MasterDAO {
         return lud.loginUser(email, password);
     }
 
-    public boolean internalLogin(String token) {
-        Connection connection = this.connection;
+    public boolean loginInternalUser(String token) {
         InternalLoginDAO ild = new InternalLoginDAO(connection);
-        ild.internalLogin(token);
-        return ild.internalLogin(token);
+        ild.loginInternalUser(token);
+        return ild.loginInternalUser(token);
     }
 
-
-
+    public ArrayList<Questionario> getQuestionarios() {
+        QuestionarioDAO qd = new QuestionarioDAO(connection);
+        return qd.getQuestionarios();
+    }
 }
