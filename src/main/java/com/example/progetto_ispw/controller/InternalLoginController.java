@@ -14,8 +14,8 @@ public class InternalLoginController {
         internalLogin();
     }
 
-    public InternalLoginDAO internalLogin() {
+    public boolean internalLogin() {
         InternalLoginDAO internalLoginDAO = new InternalLoginDAO(connection);
-        return internalLoginDAO;
+        return true;
     }
 }

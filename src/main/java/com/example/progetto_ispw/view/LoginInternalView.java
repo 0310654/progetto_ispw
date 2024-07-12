@@ -49,8 +49,7 @@ public class LoginInternalView extends Application {
             if (token.isEmpty()) {
                 messageLabel.setText("Per favore, compila il campo.");
             } else {
-                MasterController masterController = MasterController.getInstance();
-                boolean utenteTrovato = masterController.internalLogin(token);
+                boolean utenteTrovato = MasterController.getInstance().internalLogin(token);
                 if (utenteTrovato) {
                     MasterView masterView = MasterView.getInstance();
                     masterView.showHomePageView();

@@ -1,6 +1,7 @@
 package com.example.progetto_ispw.controller;
 
 
+import com.example.progetto_ispw.dao.DBConnectionDAO;
 import com.example.progetto_ispw.dao.InternalLoginDAO;
 import com.example.progetto_ispw.dao.LoginUserDAO;
 import com.example.progetto_ispw.model.Questionario;
@@ -27,27 +28,22 @@ public class MasterController {
         return instance;
     }
 
-    public static Connection getConnection() {
-
+    public boolean login(String email, String password) {
+        LoginUserController luc = new LoginUserController();
+        return luc.login(email, password);
     }
 
-    public LoginUserDAO login(String email, String password) {
-        LoginUserController luc = new LoginUserController(dbConnectionDAO.getConnection());
-        luc.login();
-        return luc.login();
-    }
-
-
+    //restituisce una lista di questionari in base alla parola cercata nella barra nella homepage
     public ArrayList<Questionario> getQuestSearched() {
         qc.getQuestSearched();
         return null;
     }
-
+    //restituisce il questionario a cui voglio votare
     public Questionario getQuestionario() {
         qc.getQuestionario();
         return qc.getQuestionario();
     }
-
+    //ho votato: salva la mia risposta
     public void votedQuest(String risposta) {
         qc.votedQuest(risposta);
     }
@@ -75,6 +71,7 @@ public class MasterController {
         uc.createUser();
     }
 
+    // TODO capire a cosa serve questa funzione
     public void recuperaCollab() {
         CollabsController cc = new CollabsController();
         cc.recuperaCollab();
@@ -86,7 +83,7 @@ public class MasterController {
         return cc.getCollabs();
     }
 
-    public InternalLoginDAO internalLogin(String token) {
+    public boolean internalLogin(String token) {
         InternalLoginController ilc = new InternalLoginController();
         ilc.internalLogin();
         return ilc.internalLogin();

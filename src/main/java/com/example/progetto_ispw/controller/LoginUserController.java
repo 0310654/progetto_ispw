@@ -3,6 +3,7 @@ package com.example.progetto_ispw.controller;
 
 
 import com.example.progetto_ispw.dao.DBConnectionDAO;
+import com.example.progetto_ispw.dao.LoginUserDAO;
 import com.example.progetto_ispw.dao.MasterDAO;
 
 import java.sql.Connection;
@@ -11,12 +12,9 @@ import java.util.ArrayList;
 public class LoginUserController {
 
     private ArrayList<String> attributi;
-    private Connection connection;
 
 
-    public LoginUserController(Connection connection) {
-        this.connection = this.connection;
-        login();
+    public LoginUserController() {
     }
 
 
@@ -25,12 +23,13 @@ public class LoginUserController {
     }
 
     public boolean login(String email, String password) {
-        if (isValidEmail(email) && isValidPassword(password)) {
-            Connection connection = MasterController.getConnection();
-            MasterDAO.getInstance().setConnection(connection);
+        //if (isValidEmail(email) && isValidPassword(password)) {
             return MasterDAO.getInstance().loginUser(email, password);
-        }
-        return false;
+        //}
+//        else {
+//            System.err.println("Invalid email or password");
+//        }
+        //return false;
     }
 
     public static boolean isValidEmail(String email) {

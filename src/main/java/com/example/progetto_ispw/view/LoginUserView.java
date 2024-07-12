@@ -26,7 +26,6 @@ public class LoginUserView extends Application {
     public void start(Stage stage) throws Exception {
 
         this.primaryStage = stage;
-        ArrayList<String> result = new ArrayList<>();
 
         primaryStage.setTitle("Login User");
 
@@ -58,11 +57,9 @@ public class LoginUserView extends Application {
             if (email.isEmpty() || password.isEmpty()) {
                 messageLabel.setText("Per favore, compila tutti i campi.");
             } else {
-                MasterController masterController = MasterController.getInstance();
-                boolean utenteTrovato = masterController.login(email, password);
+                boolean utenteTrovato = MasterController.getInstance().login(email, password);
                 if (utenteTrovato) {
-                    MasterView masterView = MasterView.getInstance();
-                    masterView.showHomePageView();
+                    MasterView.getInstance().showHomePageView();
                 } else {
                     messageLabel.setText("Credenziali non valide. Riprova.");
                 }

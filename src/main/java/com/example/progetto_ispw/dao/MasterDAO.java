@@ -9,10 +9,12 @@ public class MasterDAO {
     private static MasterDAO instance;
     private Connection connection;
 
-    private MasterDAO() {}
+    private MasterDAO() {
+        this.connection = DBConnectionDAO.getInstance().getConnection();
+    }
 
-    public void setConnection(Connection connection) {
-        this.connection = DBConnectionDAO.getConnection();
+    public static Connection getConnection() {
+        return DBConnectionDAO.getInstance().getConnection();
     }
 
     public static MasterDAO getInstance() {
@@ -23,7 +25,6 @@ public class MasterDAO {
     }
 
     public boolean loginUser(String email, String password) {
-        Connection connection = this.connection;
         LoginUserDAO lud = new LoginUserDAO(connection);
         lud.loginUser(email, password);
         return lud.loginUser(email, password);
@@ -35,5 +36,7 @@ public class MasterDAO {
         ild.internalLogin(token);
         return ild.internalLogin(token);
     }
+
+
 
 }

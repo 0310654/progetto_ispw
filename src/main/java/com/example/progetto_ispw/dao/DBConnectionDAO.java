@@ -6,22 +6,30 @@ import java.sql.SQLException;
 
 public class DBConnectionDAO {
 
-    Connection connection;
+    private static DBConnectionDAO instance;
+    static Connection connection;
 
     //TODO creare la base di dati mysql e quindi poi mettere i dati della connesione
-    public DBConnectionDAO() {
-        String stringConnessione = " ";
-        String username = " ";
-        String password = " ";
+    private DBConnectionDAO() {
+        String stringConnessione = "jdbc:mysql://localhost:3306/progetto_ispw";
+        String username = "root";
+        String password = "password";
         try {
-            this.connection = DriverManager.getConnection(stringConnessione, username, password);
+            connection = DriverManager.getConnection(stringConnessione, username, password);
         } catch(SQLException e) {
             e.printStackTrace();
-            this.connection = null;
+            connection = null;
         }
     }
 
-    public static Connection getConnection() {
+    protected static DBConnectionDAO getInstance() {
+        if(instance==null) {
+            instance = new DBConnectionDAO();
+        }
+        return instance;
+    }
+
+    protected Connection getConnection() {
         return connection;
     }
 }
