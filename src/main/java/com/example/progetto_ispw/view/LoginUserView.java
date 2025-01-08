@@ -16,12 +16,23 @@ import java.util.Random;
 
 import static javafx.application.Application.launch;
 
+/**
+ * Classe che rappresenta la vista di login per l'utente.
+ * Permette agli utenti di inserire le proprie credenziali per accedere al sistema.
+ */
 public class LoginUserView extends Application {
     private Stage primaryStage;
 
     public LoginUserView() {
     }
 
+    /**
+     * funzione che permette all'utente di entrare nella home page.
+     * vengono richieste email e password, e i dati vengono confrontati con quanto presente nel database
+     * sfruttando la funzione login del master controller
+     * @param stage
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
 

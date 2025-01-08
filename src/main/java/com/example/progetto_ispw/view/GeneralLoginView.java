@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
+/**
+ * Classe che rappresenta la vista generale del login.
+ * Consente agli utenti di scegliere il tipo di login (utente normale o utente interno).
+ */
 public class GeneralLoginView extends Application {
     @Override
     public void start(Stage stage) throws Exception {

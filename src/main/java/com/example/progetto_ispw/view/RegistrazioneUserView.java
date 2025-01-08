@@ -101,6 +101,7 @@ public class RegistrazioneUserView extends Application {
     }
 
     // Metodo per la validazione delle credenziali di login
+    //TODO
     private void validateregistration() {
         showSuccessScreen();
     }
