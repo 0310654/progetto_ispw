@@ -1,5 +1,6 @@
 package com.example.progetto_ispw;
 
+import com.example.progetto_ispw.dao.DBConnectionDAO;
 import com.example.progetto_ispw.view.MasterView;
 import javafx.application.Application;
 import javafx.stage.Stage;

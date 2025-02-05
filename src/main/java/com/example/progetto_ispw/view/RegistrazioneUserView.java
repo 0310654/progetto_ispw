@@ -1,5 +1,6 @@
 package com.example.progetto_ispw.view;
 
+import com.example.progetto_ispw.controller.MasterController;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -20,12 +21,18 @@ public class RegistrazioneUserView extends Application {
     public RegistrazioneUserView() {
     }
 
+    private String username;
     private String nome; //Il nome reale o visualizzato dell'utente.
     private String email;
     private String password;
     private String cellulare;
     private String dataDiNascita;
+    private String nazionalita;
+    private String sesso;
     private String bio;
+
+
+    //TODO assegnare un codice user in automatico(come in BasiDiDati)
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -60,6 +67,14 @@ public class RegistrazioneUserView extends Application {
         TextField dataDiNascitaField = new TextField();
         dataDiNascitaField.setPromptText("Inserisci la tua data di nascita");
 
+        Label nazionalitaLabel = new Label("Nazionalità:");
+        TextField nazionalitaField = new TextField();
+        nazionalitaField.setPromptText("Inserisci la tua nazionalità");
+
+        Label sessoLabel = new Label("Sesso:");
+        TextField sessoField = new TextField();
+        sessoField.setPromptText("Inserisci il tuo sesso");
+
         Label bioLabel = new Label("Bio:");
         TextField bioField = new TextField();
         bioField.setPromptText("Inserisci una bio che ti rappresenti (Opzionale)");
@@ -70,25 +85,36 @@ public class RegistrazioneUserView extends Application {
 
         // Gestore dell'evento del bottone di login
         loginButton.setOnAction(event -> {
-            String username = usernameField.getText();
-            String name = nameField.getText();
-            String email = emailField.getText();
-            String password = passwordField.getText();
-            String cellulare = cellulareField.getText();
-            String dataDiNascita = dataDiNascitaField.getText();
-            String bio = bioField.getText();
+            username = usernameField.getText();
+            nome = nameField.getText();
+            email = emailField.getText();
+            password = passwordField.getText();
+            cellulare = cellulareField.getText();
+            dataDiNascita = dataDiNascitaField.getText();
+            nazionalita = nazionalitaField.getText();
+            sesso = sessoField.getText();
+            bio = bioField.getText();
 
-            if (username.isEmpty() || name.isEmpty() || email.isEmpty() || password.isEmpty() || cellulare.isEmpty() || dataDiNascita.isEmpty()) {
+            if (username.isEmpty() || nome.isEmpty() || email.isEmpty() || password.isEmpty() || cellulare.isEmpty() || dataDiNascita.isEmpty() || nazionalita.isEmpty() || sesso.isEmpty()) {
                 messageLabel.setText("Per favore, compila tutti i campi.");
             } else {
-                validateregistration();
+                result.add(username);
+                result.add(nome);
+                result.add(email);
+                result.add(password);
+                result.add(cellulare);
+                result.add(dataDiNascita);
+                result.add(nazionalita);
+                result.add(sesso);
+                result.add(bio);
+                validateregistration(result);
             }
         });
 
         // Layout
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll(usernameLabel,usernameField, nameLabel, nameField, emailLabel, emailField, passwordLabel, passwordField, cellulareLabel, cellulareField, dataDiNascitaLabel, dataDiNascitaField, bioLabel, bioField, loginButton, messageLabel);
+        vbox.getChildren().addAll(usernameLabel,usernameField, nameLabel, nameField, emailLabel, emailField, passwordLabel, passwordField, cellulareLabel, cellulareField, dataDiNascitaLabel, dataDiNascitaField, nazionalitaLabel, nazionalitaField, sessoLabel, sessoField, bioLabel, bioField, loginButton, messageLabel);
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(vbox);
@@ -101,9 +127,14 @@ public class RegistrazioneUserView extends Application {
     }
 
     // Metodo per la validazione delle credenziali di login
-    //TODO
-    private void validateregistration() {
-        showSuccessScreen();
+    private void validateregistration(ArrayList<String> result) {
+        if (MasterController.getInstance().registrazioneUser(result)) {
+            showSuccessScreen();
+        }
+        else {
+            //schermata di errore
+        }
+
     }
 
     private void showSuccessScreen() {

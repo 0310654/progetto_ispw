@@ -15,28 +15,46 @@ public class QuestionarioDAO {
     }
 
     protected ArrayList<Questionario> getQuestionarios() {
-
         ArrayList<Questionario> questionarios = new ArrayList<>();
-
-            CallableStatement callablestatement = null;
-            try {
-                callablestatement = this.connection.prepareCall("call getquestionari();");
-                callablestatement.execute();
-                ResultSet resultSet = callablestatement.getResultSet();
-                while (resultSet.next()) {
-                    Questionario questionario = new Questionario(
-                            resultSet.getString(1),
-                            resultSet.getString(4),
-                            resultSet.getString(2),
-                            new ArrayList<>(Arrays.asList(resultSet.getString(3).split("\\|")))
-                            );
-                    questionarios.add(questionario);
-                }
-                return questionarios;
-            } catch (SQLException e) {
-                System.err.println("Errore durante il controllo delle scadenze: " + e.getMessage());
-                return null;
+        CallableStatement callablestatement = null;
+        try {
+            callablestatement = this.connection.prepareCall("call getquestionari();");
+            callablestatement.execute();
+            ResultSet resultSet = callablestatement.getResultSet();
+            while (resultSet.next()) {
+                Questionario questionario = new Questionario(
+                        resultSet.getString(1),
+                        resultSet.getString(4),
+                        resultSet.getString(2),
+                        new ArrayList<>(Arrays.asList(resultSet.getString(3).split("\\|")))
+                );
+                questionarios.add(questionario);
             }
+            return questionarios;
+        } catch (SQLException e) {
+            System.err.println("Errore durante il controllo delle scadenze: " + e.getMessage());
+            return null;
         }
+    }
+
+    protected boolean votedQuest(String codiceQuest, String risposta, String codeUser){
+
+        CallableStatement cs = null;
+        try {
+            cs = connection.prepareCall("{call voteQuest(?,?,?)}");
+            cs.setString(1, codiceQuest);
+            cs.setString(2, risposta);
+            cs.setString(3, codeUser);
+            cs.executeQuery();
+
+        } catch (SQLException e) {
+            System.err.println("errore nella votazione: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+        System.out.println("votato correttamente");
+        return true;
+    }
+
+
 
 }

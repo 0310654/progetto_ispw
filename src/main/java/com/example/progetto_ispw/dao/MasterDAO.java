@@ -26,15 +26,13 @@ public class MasterDAO {
         return instance;
     }
 
-    public boolean loginUser(String email, String password) {
+    public ArrayList<String> loginUser(String email, String password) {
         LoginUserDAO lud = new LoginUserDAO(connection);
-        lud.loginUser(email, password);
         return lud.loginUser(email, password);
     }
 
     public boolean loginInternalUser(String token) {
         InternalLoginDAO ild = new InternalLoginDAO(connection);
-        ild.loginInternalUser(token);
         return ild.loginInternalUser(token);
     }
 
@@ -42,4 +40,15 @@ public class MasterDAO {
         QuestionarioDAO qd = new QuestionarioDAO(connection);
         return qd.getQuestionarios();
     }
+
+    public boolean votedQuest(String codiceQuest, String risposta, String codeUser ) {
+        QuestionarioDAO qd = new QuestionarioDAO(connection);
+        return qd.votedQuest(codiceQuest, risposta, codeUser);
+    }
+
+    public boolean  registrazioneUser(String username, String nome, String email, String password, String cellulare, String dataDiNascita, String nazionalita, String sesso, String bio) {
+        UserDAO ud = new UserDAO(connection);
+        return ud.registrazioneUser(username,nome,email, password, cellulare,dataDiNascita,nazionalita,sesso,bio);
+    }
 }
+

@@ -14,7 +14,7 @@ public class LoginUserDAO {
         this.connection = connection;
     }
 
-    protected boolean loginUser(String email, String pass){
+    protected ArrayList<String> loginUser(String email, String pass){
         String username;
         String nome;
         String cellulare;
@@ -22,11 +22,12 @@ public class LoginUserDAO {
         String nazionalita;
         String sesso;
         String bio;
+        String codiceUtente;
         ArrayList<String> attributi = new ArrayList<>();
 
         CallableStatement cs = null;
         try {
-            cs = connection.prepareCall("{call loginUser(?,?,?,?,?,?,?,?,?)}");
+            cs = connection.prepareCall("{call loginUser(?,?,?,?,?,?,?,?,?,?)}");
             cs.setString(1, email);
             cs.setString(2, pass);
             cs.registerOutParameter(3, Types.VARCHAR);
@@ -36,6 +37,8 @@ public class LoginUserDAO {
             cs.registerOutParameter(7, Types.VARCHAR);
             cs.registerOutParameter(8, Types.VARCHAR);
             cs.registerOutParameter(9, Types.VARCHAR);
+            cs.registerOutParameter(10, Types.VARCHAR);
+
             cs.executeQuery();
             username = cs.getString(3);
             nome = cs.getString(4);
@@ -44,6 +47,8 @@ public class LoginUserDAO {
             nazionalita = cs.getString(7);
             sesso = cs.getString(8);
             bio = cs.getString(9);
+            codiceUtente = cs.getString(10);
+
             attributi.add(username);
             attributi.add(nome);
             attributi.add(cellulare);
@@ -51,12 +56,13 @@ public class LoginUserDAO {
             attributi.add(nazionalita);
             attributi.add(sesso);
             attributi.add(bio);
+            attributi.add(codiceUtente);
         } catch (SQLException e) {
             System.err.println("errore nel login");
             throw new RuntimeException(e);
         }
-        System.out.println("login riuscito");
-        return true;
+        System.out.println("login riuscito - username: " + username);
+        return attributi;
     }
 }
 
