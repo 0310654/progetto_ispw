@@ -1,20 +1,17 @@
 package com.example.progetto_ispw.controller;
 
 
-import com.example.progetto_ispw.dao.DBConnectionDAO;
-import com.example.progetto_ispw.dao.InternalLoginDAO;
-import com.example.progetto_ispw.dao.LoginUserDAO;
 import com.example.progetto_ispw.model.Questionario;
 import com.example.progetto_ispw.model.User;
 import javafx.util.Pair;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 
 
 public class MasterController {
 
     private static MasterController instance;
+    User user;
 
     private MasterController() {}
 
@@ -26,22 +23,40 @@ public class MasterController {
     }
 
     public boolean login(String email, String password) {
-        LoginUserController luc = new LoginUserController();
-        return luc.login(email, password);
+        return LoginUserController.getInstance().login(email, password);
     }
 
-    //restituisce una lista di questionari in base alla parola cercata nella barra nella homepage
-    public ArrayList<Questionario> getQuestSearched() {
-        QuestionarioController.getInstance().getQuestSearched();
-        return null;
+    public boolean registrazioneUser(ArrayList<String> result) {
+        String username = result.get(0);
+        String nome  = result.get(1);
+        String email = result.get(2);
+        String password = result.get(3);
+        String cellulare = result.get(4);
+        String dataDiNascita = result.get(5);
+        String nazionalita = result.get(6);
+        String sesso = result.get(7);
+        String bio = result.get(8);
+        return UserController.getInstance().registrazioneUser(username, nome,  email,  password,  cellulare, dataDiNascita, nazionalita, sesso, bio);
     }
+
+
+
+
+
     //restituisce il questionario a cui voglio votare
     public Questionario getQuestionario() {
         return QuestionarioController.getInstance().getQuestionario();
     }
     //ho votato: salva la mia risposta
-    public void votedQuest(String risposta) {
-        QuestionarioController.getInstance().votedQuest(risposta);
+    public boolean votedQuest(String risposta) {
+        return QuestionarioController.getInstance().votedQuest(risposta);
+    }
+
+
+    //restituisce una lista di questionari in base alla parola cercata nella barra nella homepage
+    public ArrayList<Questionario> getQuestSearched() {
+        QuestionarioController.getInstance().getQuestSearched();
+        return null;
     }
 
     public void goToQuest(Questionario q) {
@@ -49,7 +64,7 @@ public class MasterController {
     }
 
     public void nextQuest() {
-       QuestionarioController.getInstance().nextQuest();
+        QuestionarioController.getInstance().nextQuest();
     }
 
     public void createQuest() {
@@ -57,14 +72,12 @@ public class MasterController {
     }
 
     public User getCurrentUser() {
-        UserController uc = new UserController();
-        uc.getCurrentUser();
-        return uc.getCurrentUser();
+        return LoginUserController.getInstance().getUser();
     }
 
     private void createUser(){
-        UserController uc = new UserController();
-        uc.createUser();
+        UserController uc = UserController.getInstance();
+        //uc.createUser();
     }
 
     // TODO capire a cosa serve questa funzione

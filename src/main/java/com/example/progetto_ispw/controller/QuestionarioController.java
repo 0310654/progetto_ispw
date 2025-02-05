@@ -28,6 +28,22 @@ public class QuestionarioController {
         return instance;
     }
 
+    public Questionario getQuestionario() {
+        if (questionarios == null || currentQuest >= questionarios.size()) {
+            return null;
+        }
+        else {
+            Questionario q = questionarios.get(currentQuest);
+            return q ;
+        }
+    }
+
+    public boolean votedQuest(String risposta) {
+        String codiceQuest = questionarios.get(currentQuest).getCodice();
+        String codeUser = MasterController.getInstance().getCurrentUser().getCode();
+        return MasterDAO.getInstance().votedQuest(codiceQuest, risposta, codeUser);
+    }
+
     public ArrayList<Questionario> getQuestSearched() {
         //TODO creare arraylist di questionari in base alla ricerca
         ArrayList<Questionario> listaQuest = new ArrayList<>();
@@ -37,30 +53,13 @@ public class QuestionarioController {
         return listaQuest;
     }
 
-    public Questionario getQuestionario() {
-        if (questionarios == null || currentQuest >= questionarios.size()) {
-            return null;
-        }
-        else {
-            Questionario q = questionarios.get(currentQuest);
-            currentQuest ++;
-            return q ;
-        }
-    }
-
-    public void votedQuest(String risposta) {
-        //TODO
-        System.out.println(risposta);
-    }
-
     public void goToQuest(Questionario q) {
         //TODO
         System.out.println("Seleziono " + q.getDomanda());
     }
 
-    public void nextQuest() {
-        //TODO
-        System.out.println("carico prossimo questionario");
+    protected void nextQuest() {
+        currentQuest ++;
     }
 
     public void createQuest(){

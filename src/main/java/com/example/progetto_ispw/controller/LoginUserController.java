@@ -5,31 +5,50 @@ package com.example.progetto_ispw.controller;
 import com.example.progetto_ispw.dao.DBConnectionDAO;
 import com.example.progetto_ispw.dao.LoginUserDAO;
 import com.example.progetto_ispw.dao.MasterDAO;
+import com.example.progetto_ispw.model.User;
 
 import java.sql.Connection;
 import java.util.ArrayList;
 
 public class LoginUserController {
 
-    private ArrayList<String> attributi;
+    private static LoginUserController instance;
+    User user;
 
-
-    public LoginUserController() {
+    private LoginUserController() {
     }
 
-
-    public ArrayList<String> getAttributi(){
-        return this.attributi;
+    public static LoginUserController getInstance() {
+        if(instance==null) {
+            instance = new LoginUserController();
+        }
+        return instance;
     }
 
     public boolean login(String email, String password) {
         //if (isValidEmail(email) && isValidPassword(password)) {
-            return MasterDAO.getInstance().loginUser(email, password);
+            ArrayList<String> attributi = MasterDAO.getInstance().loginUser(email, password);
+            if (attributi != null && attributi.get(0) != null) {
+                user = new User(attributi.get(0), //username
+                        attributi.get(1), //nome
+                        email,
+                        attributi.get(2), //cellulare
+                        attributi.get(3), //datadinascita
+                        attributi.get(4), //nazionalita
+                        attributi.get(5), //sesso
+                        attributi.get(6)) ; //bio
+                return true;
+            }
+            return false;
         //}
 //        else {
 //            System.err.println("Invalid email or password");
 //        }
         //return false;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public static boolean isValidEmail(String email) {

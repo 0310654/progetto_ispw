@@ -11,8 +11,8 @@ public class SchedaUtente extends User {
     //TODO questionari svolti è un array list dove mettere il codice dei questionari a cui ha risposto lo user
     //private String questionariSvolti;
     private Vector<Questionario> questionariSvolti;
-    public SchedaUtente (String username, String nome, String email, String password, String cellulare, String dataDiNascita, String bio, String codiceScheda, Vector<Questionario> questionariSvolti) {
-        super(username, nome, email, password, cellulare, dataDiNascita, bio);
+    public SchedaUtente (String username, String nome, String email, String cellulare, String dataDiNascita, String nazionalita, String sesso, String bio, String codiceScheda, Vector<Questionario> questionariSvolti) {
+        super(username, nome, email, cellulare, dataDiNascita, nazionalita, sesso, bio);
         this.questionariSvolti = questionariSvolti;
         this.codiceScheda = codiceScheda;
     }
