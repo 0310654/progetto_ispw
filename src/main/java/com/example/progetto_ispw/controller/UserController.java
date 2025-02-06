@@ -25,7 +25,17 @@ public class UserController {
 
 
     public boolean registrazioneUser(String username,String nome, String email, String password, String cellulare,  String dataDiNascita, String nazionalita, String sesso,  String bio) {
-        return MasterDAO.getInstance().registrazioneUser(username, nome, email, password, cellulare, dataDiNascita, nazionalita, sesso, bio);
+        boolean result =  MasterDAO.getInstance().registrazioneUser(username, nome, email, password, cellulare, dataDiNascita, nazionalita, sesso, bio);
+        if (result){
+            user.setEmail(email);
+
+            return result;
+        }
+        return false;
+    }
+
+    public User getUser() {
+        return user;
     }
 
 

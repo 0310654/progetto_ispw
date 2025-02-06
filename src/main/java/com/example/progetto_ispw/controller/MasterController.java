@@ -3,9 +3,10 @@ package com.example.progetto_ispw.controller;
 
 import com.example.progetto_ispw.model.Questionario;
 import com.example.progetto_ispw.model.User;
-import javafx.util.Pair;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MasterController {
@@ -40,20 +41,19 @@ public class MasterController {
     }
 
 
-
-
-
     //restituisce il questionario a cui voglio votare
     public Questionario getQuestionario() {
         return QuestionarioController.getInstance().getQuestionario();
     }
+
     //ho votato: salva la mia risposta
     public boolean votedQuest(String risposta) {
-        return QuestionarioController.getInstance().votedQuest(risposta);
+        String email = getCurrentUser().getEmail();
+        return QuestionarioController.getInstance().votedQuest(risposta, email);
     }
 
 
-    //restituisce una lista di questionari in base alla parola cercata nella barra nella homepage
+    //TODO restituisce una lista di questionari in base alla parola cercata nella barra nella homepage
     public ArrayList<Questionario> getQuestSearched() {
         QuestionarioController.getInstance().getQuestSearched();
         return null;
@@ -67,9 +67,9 @@ public class MasterController {
         QuestionarioController.getInstance().nextQuest();
     }
 
-    public void createQuest() {
+    /*public void createQuest() {
         QuestionarioController.getInstance().createQuest();
-    }
+    }*/
 
     public User getCurrentUser() {
         return LoginUserController.getInstance().getUser();
@@ -80,21 +80,22 @@ public class MasterController {
         //uc.createUser();
     }
 
-    // TODO capire a cosa serve questa funzione
+    /*TODO capire a cosa serve questa funzione
     public void recuperaCollab() {
         CollabsController cc = new CollabsController();
         cc.recuperaCollab();
-    }
+    }*/
 
-    public ArrayList<Pair> getCollabs() {
+    public List<AbstractMap.SimpleEntry<String, String>> getCollabs() {
         CollabsController cc = new CollabsController();
-        cc.recuperaCollab();
-        return cc.getCollabs();
+        String email = getCurrentUser().getEmail();
+        return cc.getCollabs(email);
     }
 
-    public boolean internalLogin(String token) {
+   /* public boolean internalLogin(String token) {
         InternalLoginController ilc = new InternalLoginController();
         ilc.internalLogin(token);
         return ilc.internalLogin(token);
-    }
+    }*/
+
 }

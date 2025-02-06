@@ -3,7 +3,6 @@ package com.example.progetto_ispw.controller;
 import com.example.progetto_ispw.dao.MasterDAO;
 import com.example.progetto_ispw.model.Questionario;
 import com.example.progetto_ispw.model.Statistiche;
-import com.example.progetto_ispw.model.User;
 
 import java.util.ArrayList;
 
@@ -38,10 +37,9 @@ public class QuestionarioController {
         }
     }
 
-    public boolean votedQuest(String risposta) {
+    public boolean votedQuest(String risposta, String email) {
         String codiceQuest = questionarios.get(currentQuest).getCodice();
-        String codeUser = MasterController.getInstance().getCurrentUser().getCode();
-        return MasterDAO.getInstance().votedQuest(codiceQuest, risposta, codeUser);
+        return MasterDAO.getInstance().votedQuest( codiceQuest, risposta, email);
     }
 
     public ArrayList<Questionario> getQuestSearched() {

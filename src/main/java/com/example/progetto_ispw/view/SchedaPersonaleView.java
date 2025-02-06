@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class SchedaPersonaleView extends Application {
-
+    private Stage primaryStage;
 
     public SchedaPersonaleView() {
     }
@@ -21,43 +21,46 @@ public class SchedaPersonaleView extends Application {
     private String username;
     private String bio;
     private ArrayList<String> questionariCollaborati;
-    private ArrayList<String> questionariCondivisi;
 
     @Override
     public void start(Stage stage) throws Exception {
-
+        this.primaryStage = stage;
         User user = MasterController.getInstance().getCurrentUser();
 
-        stage.setTitle("Scheda");
+        primaryStage.setTitle("Scheda Personale");
 
-        Label usernameLabel = new Label(user.getUsername());
-        Label bioLabel = new Label(user.getBio());
+        Label usernameLabel = new Label("Username: " + user.getUsername());
 
-        /*Button modificaBioButton = new Button("Modifica bio");
-        modificaBioButton.setOnAction(event -> {
-            //TODO
-        });*/
+        Label bioLabel = new Label("Bio: " + user.getBio());
+
 
         Button questionariCollaboratiButton = new Button("Questionari a cui hai collaborato");
         Button backButton = new Button("Torna alla home page");
+        Button modificaBioButton = new Button("Modifica bio");
 
+
+        // Gestore dell'evento del bottone
+        questionariCollaboratiButton.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance();
+            masterView.showCollabsView();
+        });
+
+        //BACKBUTTON
         backButton.setOnAction(event -> {
             MasterView masterView = MasterView.getInstance();
             masterView.showHomePageView();
         });
 
-        // Gestore dell'evento del bottone
-        questionariCollaboratiButton.setOnAction(event -> {
-            MasterController.getInstance().recuperaCollab();
-            MasterView.getInstance().showCollabsView();
+
+      //TODO: tasto per modificare la bio
+        modificaBioButton.setOnAction(event -> {
         });
-
-
 
         // Layout
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll(usernameLabel, bioLabel, questionariCollaboratiButton);
+        //TODO aggiungi backbutton
+        vbox.getChildren().addAll( usernameLabel, bioLabel, questionariCollaboratiButton, modificaBioButton);
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(vbox);
