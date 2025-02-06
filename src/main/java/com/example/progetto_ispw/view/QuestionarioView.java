@@ -26,11 +26,13 @@ public class QuestionarioView extends Application {
         stage.setTitle("Questionario");
 
         if (questionario != null) {
+
             Label domandaLabel = new Label(questionario.getDomanda());
 
             VBox vbox = new VBox(10);
             vbox.setPadding(new Insets(20, 20, 20, 20));
             vbox.getChildren().add(domandaLabel);
+            //per ogni risposta possibile mi creo un bottone, se lo clicco
             for (String risposta : questionario.getPossibiliRisposte()) {
                 System.out.println(risposta);
                 Button voteButton = new Button(risposta);

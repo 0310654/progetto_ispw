@@ -46,7 +46,7 @@ public class LoginInternalView extends Application {
         loginButton.setOnAction(event -> {
             String token = tokenField.getText();
 
-            if (token.isEmpty()) {
+            /*if (token.isEmpty()) {
                 messageLabel.setText("Per favore, compila il campo.");
             } else {
                 boolean utenteTrovato = MasterController.getInstance().internalLogin(token);
@@ -56,7 +56,7 @@ public class LoginInternalView extends Application {
                 } else {
                     messageLabel.setText("Credenziali non valide. Riprova.");
                 }
-            }
+            }*/
         });
 
         // Layout

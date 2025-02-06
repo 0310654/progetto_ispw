@@ -37,14 +37,16 @@ public class QuestionarioDAO {
         }
     }
 
-    protected boolean votedQuest(String codiceQuest, String risposta, String codeUser){
+    protected boolean votedQuest(String codiceQuest, String risposta, String email){
 
         CallableStatement cs = null;
         try {
-            cs = connection.prepareCall("{call voteQuest(?,?,?)}");
+            cs = connection.prepareCall("{call voteQuest(?,?)}");
+
             cs.setString(1, codiceQuest);
             cs.setString(2, risposta);
-            cs.setString(3, codeUser);
+            cs.setString(3, email);
+
             cs.executeQuery();
 
         } catch (SQLException e) {
@@ -54,7 +56,5 @@ public class QuestionarioDAO {
         System.out.println("votato correttamente");
         return true;
     }
-
-
 
 }

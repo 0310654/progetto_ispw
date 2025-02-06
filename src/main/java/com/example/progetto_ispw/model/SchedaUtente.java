@@ -1,12 +1,17 @@
 package com.example.progetto_ispw.model;
 
+import com.example.progetto_ispw.controller.MasterController;
+import com.example.progetto_ispw.controller.QuestionarioController;
+import com.example.progetto_ispw.controller.UserController;
+import com.example.progetto_ispw.dao.MasterDAO;
 import com.example.progetto_ispw.model.Questionario;
 import com.example.progetto_ispw.model.User;
 
-import java.util.Vector;
+import java.util.*;
 
 public class SchedaUtente extends User {
     private String codiceScheda;
+    User user;
 
     //TODO questionari svolti è un array list dove mettere il codice dei questionari a cui ha risposto lo user
     //private String questionariSvolti;
@@ -33,3 +38,5 @@ public class SchedaUtente extends User {
     }
 
 }
+
+

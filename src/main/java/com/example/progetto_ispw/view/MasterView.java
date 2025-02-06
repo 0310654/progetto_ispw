@@ -80,5 +80,11 @@ public class MasterView {
     }
 
     public void showCollabsView() {
+        CollabsView cv = new CollabsView();
+        try {
+            cv.start(this.stage);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

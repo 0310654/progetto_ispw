@@ -1,9 +1,11 @@
 package com.example.progetto_ispw.controller;
 
+import com.example.progetto_ispw.dao.MasterDAO;
 import com.example.progetto_ispw.model.Questionario;
-import javafx.util.Pair;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CollabsController {
 
@@ -18,12 +20,15 @@ public class CollabsController {
         this.collabs = listaQuest;
     }
 
-    public ArrayList<Pair> getCollabs() {
-        //TODO
+    public List<AbstractMap.SimpleEntry<String, String>> getCollabs(String email) {
+        return MasterDAO.getInstance().getCollabs(email);
+
+        /*//TODO
         QuestionarioController.getInstance().createQuest();
         Pair<Questionario, String> collab = new Pair<>( this.questionario, "pippo");
         ArrayList<Pair> collabs = new ArrayList<>();
         collabs.add(collab);
-        return collabs;
+        return collabs;*/
     }
+
 }
