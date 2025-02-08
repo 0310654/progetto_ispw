@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="votazione al questionario(nei questionari consigliati) e collaborazioni completate">
+    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="ricerca in teoria completata">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/CollabsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/CollabsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/MasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/MasterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/QuestionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/QuestionarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/MasterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/MasterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/QuestionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/QuestionarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/CollabsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/CollabsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/GeneralLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/GeneralLoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/GeneralLoginView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/HomePageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/HomePageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginInternalView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginUserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginUserView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/MasterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/MasterView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/QuestionarioView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/QuestionarioView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RicercaView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RegistrazioneUserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RegistrazioneUserView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738866147253</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ricerca in teoria completata">
+      <option name="closed" value="true" />
+      <created>1739009710379</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1739009710379</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +311,7 @@
     <MESSAGE value="login e registrazione completate" />
     <MESSAGE value="login, registrazione e getCollabs completate" />
     <MESSAGE value="votazione al questionario(nei questionari consigliati) e collaborazioni completate" />
-    <option name="LAST_COMMIT_MESSAGE" value="votazione al questionario(nei questionari consigliati) e collaborazioni completate" />
+    <MESSAGE value="ricerca in teoria completata" />
+    <option name="LAST_COMMIT_MESSAGE" value="ricerca in teoria completata" />
   </component>
 </project>

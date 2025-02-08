@@ -16,10 +16,6 @@ public class MasterDAO {
         this.connection = DBConnectionDAO.getInstance().getConnection();
     }
 
-    public static Connection getConnection() {
-        return DBConnectionDAO.getInstance().getConnection();
-    }
-
     public static MasterDAO getInstance() {
         if(instance==null) {
             instance = new MasterDAO();
@@ -30,11 +26,6 @@ public class MasterDAO {
     public ArrayList<String> loginUser(String email, String password) {
         LoginUserDAO lud = new LoginUserDAO(connection);
         return lud.loginUser(email, password);
-    }
-
-    public boolean loginInternalUser(String token) {
-        InternalLoginDAO ild = new InternalLoginDAO(connection);
-        return ild.loginInternalUser(token);
     }
 
     public ArrayList<Questionario> getQuestionarios() {

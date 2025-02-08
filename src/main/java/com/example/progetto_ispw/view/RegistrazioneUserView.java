@@ -22,7 +22,7 @@ public class RegistrazioneUserView extends Application {
     }
 
     private String username;
-    private String nome; //Il nome reale o visualizzato dell'utente.
+    private String nome;
     private String email;
     private String password;
     private String cellulare;
@@ -30,9 +30,6 @@ public class RegistrazioneUserView extends Application {
     private String nazionalita;
     private String sesso;
     private String bio;
-
-
-    //TODO assegnare un codice user in automatico(come in BasiDiDati)
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -42,7 +39,6 @@ public class RegistrazioneUserView extends Application {
 
         primaryStage.setTitle("Registrazione");
 
-        // Creazione dei campi di input
         Label usernameLabel = new Label("Username:");
         TextField usernameField = new TextField();
         usernameField.setPromptText("Inserisci un username univoco");
@@ -83,6 +79,12 @@ public class RegistrazioneUserView extends Application {
         Button loginButton = new Button("Registrazione");
         Label messageLabel = new Label();
 
+        Button backButton = new Button("Annulla");
+        backButton.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance();
+            masterView.showLoginUserView();
+        });
+
         // Gestore dell'evento del bottone di login
         loginButton.setOnAction(event -> {
             username = usernameField.getText();
@@ -114,29 +116,34 @@ public class RegistrazioneUserView extends Application {
         // Layout
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll(usernameLabel,usernameField, nameLabel, nameField, emailLabel, emailField, passwordLabel, passwordField, cellulareLabel, cellulareField, dataDiNascitaLabel, dataDiNascitaField, nazionalitaLabel, nazionalitaField, sessoLabel, sessoField, bioLabel, bioField, loginButton, messageLabel);
+        vbox.getChildren().addAll(usernameLabel,usernameField, nameLabel, nameField, emailLabel, emailField, passwordLabel, passwordField, cellulareLabel, cellulareField, dataDiNascitaLabel, dataDiNascitaField, nazionalitaLabel, nazionalitaField, sessoLabel, sessoField, bioLabel, bioField, loginButton, messageLabel, backButton);
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(vbox);
         scrollPane.setFitToWidth(true);
 
-        // Scena
         Scene scene = new Scene(scrollPane, 300, 200);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    // Metodo per la validazione delle credenziali di login
+    /**
+     * Metodo per la validazione delle credenziali di login.
+     * Consente agli utenti di capire se la registrazione è andata a buon fine o meno.
+     */
     private void validateregistration(ArrayList<String> result) {
         if (MasterController.getInstance().registrazioneUser(result)) {
             showSuccessScreen();
         }
         else {
-            //schermata di errore
+            showFailScreen();
         }
-
     }
 
+    /**
+     * Schermata di successo.
+     * Consente agli utenti di capire che la registrazione è andata a buon fine.
+     */
     private void showSuccessScreen() {
         Label successLabel = new Label("Successo, registrazione effettuata");
         VBox vbox = new VBox(10);
@@ -145,6 +152,20 @@ public class RegistrazioneUserView extends Application {
 
         Scene successScene = new Scene(vbox, 300, 200);
         primaryStage.setScene(successScene);
+        primaryStage.show();
+    }
+
+    /**
+     * Schermata di errore.
+     * Consente agli utenti di capire che la registrazione non è andata a buon fine.
+     */
+    private void showFailScreen() {
+        Label errorLabel = new Label("La registrazione non è andata a buon fine, per favore riprova");
+        VBox vbox = new VBox(10);
+        vbox.setPadding(new Insets(20, 20, 20, 20));
+        vbox.getChildren().add(errorLabel);
+        Scene errorScene = new Scene(vbox, 300, 200);
+        primaryStage.setScene(errorScene);
         primaryStage.show();
     }
 }

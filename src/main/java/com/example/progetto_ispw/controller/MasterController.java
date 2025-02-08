@@ -8,12 +8,15 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * MasterController è una classe sviluppata con pattern singleton e facade
+ * che reindirizza al controller specifico utile per l'operazione da compiere.
+ * ogni volta che si clicca un bottone per fare qualcosa, si richiede alla Master Controller di richiamare la classe corrispondente,
+ * la quale si occuperà di chiamare il Master Dao
+ */
 public class MasterController {
 
     private static MasterController instance;
-    User user;
-
     private MasterController() {}
 
     public static MasterController getInstance() {
@@ -40,7 +43,6 @@ public class MasterController {
         return UserController.getInstance().registrazioneUser(username, nome,  email,  password,  cellulare, dataDiNascita, nazionalita, sesso, bio);
     }
 
-
     //restituisce il questionario a cui voglio votare
     public Questionario getQuestionario() {
         return QuestionarioController.getInstance().getQuestionario();
@@ -52,33 +54,13 @@ public class MasterController {
         return QuestionarioController.getInstance().votedQuest(risposta, email);
     }
 
-
-    public void goToQuest(Questionario q) {
-        QuestionarioController.getInstance().goToQuest(q);
-    }
-
     public void nextQuest() {
         QuestionarioController.getInstance().nextQuest();
     }
 
-    /*public void createQuest() {
-        QuestionarioController.getInstance().createQuest();
-    }*/
-
     public User getCurrentUser() {
         return LoginUserController.getInstance().getUser();
     }
-
-    private void createUser(){
-        UserController uc = UserController.getInstance();
-        //uc.createUser();
-    }
-
-    /*TODO capire a cosa serve questa funzione
-    public void recuperaCollab() {
-        CollabsController cc = new CollabsController();
-        cc.recuperaCollab();
-    }*/
 
     public List<AbstractMap.SimpleEntry<String, String>> getCollabs() {
         CollabsController cc = new CollabsController();
@@ -93,12 +75,5 @@ public class MasterController {
     public void searchQuest(String resultLabel) {
         QuestionarioController.getInstance().cercaQuest(resultLabel);
     }
-
-
-   /* public boolean internalLogin(String token) {
-        InternalLoginController ilc = new InternalLoginController();
-        ilc.internalLogin(token);
-        return ilc.internalLogin(token);
-    }*/
 
 }

@@ -13,10 +13,12 @@ public class CollabsDAO {
         this.connection = connection;
     }
 
+    /**
+     * Funzione che, inserendo l'email e connettendosi al db, richiede le info dei questionari a cui l'utente ha collaborato.
+     */
     public List<AbstractMap.SimpleEntry<String, String>> getCollabs(String email) {
 
         try {
-            //in argomento il sistema mette direttamente la mia email per riconoscere i miei questionari nel DB
             CallableStatement cs = connection.prepareCall("{call getcollabs(?)}");
             cs.setString(1, email);
             ResultSet rs = cs.executeQuery();

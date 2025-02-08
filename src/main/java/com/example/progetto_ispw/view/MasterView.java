@@ -26,41 +26,13 @@ public class MasterView {
     }
 
     /**
-     * Mostra la vista di login per l'utente normale.
+     * Mostra la vista di login per l'utente.
      * Consente agli utenti di loggarsi nel sistema.
      */
-    public void showLoginView() {
+    public void showLoginUserView() {
         LoginUserView luv = new LoginUserView();
         try {
             luv.start(this.stage);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
-     * Mostra la vista di login interno.
-     * Consente agli utenti di inserire un token per accedere come addetti ai lavori.
-     */
-    /*public void showInternalLoginView() {
-        LoginInternalView liv = new LoginInternalView();
-        try {
-            liv.start(this.stage);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-
-    /**
-     * Mostra la vista generale del login.
-     * Permette di selezionare la modalità di accesso (utente normale o addetto ai lavori).
-     * Questa vista è visibile solo in ambiente di test per mostrare tutte le opzioni.
-     * L'utente finale vedrà solo la pagina di login standard.
-     */
-    public void showGeneralLoginView() {
-        GeneralLoginView glv = new GeneralLoginView();
-        try {
-            glv.start(this.stage);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -120,6 +92,10 @@ public class MasterView {
         }
     }
 
+    /**
+     * Mostra la vista dei questionari a cui l'utente ha collaborato.
+     * Consente agli utenti di ripercorrere lo storico sull'applicazione ricordando le risposte date in precedenza.
+     */
     public void showCollabsView() {
         CollabsView cv = new CollabsView();
         try {
@@ -129,6 +105,10 @@ public class MasterView {
         }
     }
 
+    /**
+     * Mostra la vista della pagina di incompatibilità nella ricerca.
+     * Consente agli utenti di tornare alla home page oppure di votare ai questionari consigliati dal sistema.
+     */
     public void showNonTrovatoView() {
         NonTrovatoView nt = new NonTrovatoView();
         try {
@@ -137,13 +117,4 @@ public class MasterView {
             throw new RuntimeException(e);
         }
     }
-
-    /*public void showRicercaView() {
-        RicercaView cv = new RicercaView();
-        try {
-            cv.start(this.stage);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }*/
 }

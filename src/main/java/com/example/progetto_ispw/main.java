@@ -32,7 +32,7 @@ public class main extends Application {
 
         MasterView masterView = MasterView.getInstance();
         masterView.setStage(stage);
-        masterView.showGeneralLoginView();
+        masterView.showLoginUserView();
     }
 
     public static void main(String[] args) {

@@ -41,40 +41,6 @@ public class UserDAO {
             return false;
         }
     }
-
-    /*public boolean registrazioneUser(
-            String username,
-            String nome,
-            String email,
-            String password,
-            String cellulare,
-            String dataDiNascita,
-            String nazionalita,
-            String sesso,
-            String bio) {
-
-        String call = "{call registrazioneUser(?,?,?,?,?,?,?,?,?,?)}" ;
-        try {
-            CallableStatement callableStatement = this.connection.prepareCall(call));
-            CallableStatement.setString(1, username);
-            CallableStatement.setString(2, nome);
-            CallableStatement.setString(3, email);
-            CallableStatement.setString(4, password);
-            CallableStatement.setString(5, cellulare);
-            CallableStatement.setString(6, dataDiNascita);
-            CallableStatement.setString(7, nazionalita);
-            CallableStatement.setString(8, sesso);
-            CallableStatement.setString(9, bio);
-
-            CallableStatement.executeQuery();
-            callableStatement.execute();
-            System.out.println("Fatto! Registrazione riuscita!");
-            return true;
-        } catch (SQLException e) {
-            System.err.println("errore nel login");
-            throw new RuntimeException(e);
-        }
-    }*/
 }
 
 

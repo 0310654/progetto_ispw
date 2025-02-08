@@ -1,7 +1,6 @@
 package com.example.progetto_ispw.view;
 
 import com.example.progetto_ispw.controller.MasterController;
-import com.example.progetto_ispw.model.Questionario;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -18,10 +17,8 @@ public class HomePageView extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("Homepage");
-
         MasterController masterController = MasterController.getInstance();
 
-        // Creating Labels, TextField, and Buttons
         Label domandaLabel = new Label("Salve! Cosa vuoi fare oggi?:");
         Label searchLabel = new Label("Inserisci il testo da cercare:");
         TextField searchField = new TextField();
@@ -33,7 +30,6 @@ public class HomePageView extends Application {
         Button searchButton = new Button("Cerca");
         Label resultLabel = new Label();
 
-        // Setting button actions
         schedaPersonaleButton.setOnAction(event -> {
             MasterView masterView = MasterView.getInstance();
             masterView.showSchedaPersonaleView();
@@ -49,7 +45,11 @@ public class HomePageView extends Application {
             String ricerca = searchField.getText();
             if (ricerca.isEmpty()) {
                 resultLabel.setText("Per favore, inserisci testo da cercare.");
-            } else {
+            }
+            else if (!ricerca.matches("[a-zA-Z0-9 ]*")) {
+                resultLabel.setText("Caratteri non validi, per favore riprova");
+            }
+            else {
                 masterController.searchQuest(ricerca);
                 MasterView.getInstance().showQuestionarioView();
             }
@@ -61,14 +61,11 @@ public class HomePageView extends Application {
             masterView.showHomePageView();
         });
 
-
-        // Creating layout with GridPane
         GridPane gridPane = new GridPane();
-        gridPane.setPadding(new Insets(20));
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(30));
+        gridPane.setHgap(20);
+        gridPane.setVgap(20);
 
-        // Adding elements to the GridPane
         gridPane.add(domandaLabel, 0, 0, 2, 1);
         gridPane.add(searchLabel, 0, 1);
         gridPane.add(searchField, 1, 1);
@@ -76,31 +73,21 @@ public class HomePageView extends Application {
         gridPane.add(votaButton, 1, 3);
         gridPane.add(statisticheButton, 0, 3);
         gridPane.add(searchButton, 2, 1);
-        gridPane.add(resultLabel, 0, 4, 2, 1);
+        gridPane.add(resultLabel, 1, 5, 2, 1);
 
-        // Aligning elements
         GridPane.setHalignment(domandaLabel, javafx.geometry.HPos.CENTER);
         GridPane.setHalignment(resultLabel, javafx.geometry.HPos.CENTER);
 
-        // Creating a VBox to hold the GridPane
         VBox vbox = new VBox(gridPane);
         vbox.setAlignment(Pos.CENTER);
 
-        // Creating a ScrollPane to make the UI scrollable
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(vbox);
         scrollPane.setFitToWidth(true);
 
-        // Setting the scene
         Scene scene = new Scene(scrollPane, 400, 300);
         stage.setScene(scene);
-        // Adatta le dimensioni dello stage al contenuto della scena
         stage.sizeToScene();
         stage.show();
     }
-
-
-    //private void performSearch(String searchText, Label resultLabel) {
-        //resultLabel.setText("Hai cercato: " + searchText);
-   // }
 }

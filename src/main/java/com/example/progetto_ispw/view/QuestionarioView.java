@@ -1,19 +1,15 @@
 package com.example.progetto_ispw.view;
 
 import com.example.progetto_ispw.controller.MasterController;
-import com.example.progetto_ispw.controller.QuestionarioController;
 import com.example.progetto_ispw.model.Questionario;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 
 public class QuestionarioView extends Application {
     private Stage stage;
@@ -24,7 +20,6 @@ public class QuestionarioView extends Application {
 
         MasterController masterController = MasterController.getInstance();
         Questionario questionario = masterController.getQuestionario();
-
 
         if (questionario != null) {
 
@@ -61,14 +56,9 @@ public class QuestionarioView extends Application {
 
             vbox.getChildren().addAll(backButton, skipButton);
 
-            // Scena
             Scene scene = new Scene(vbox, 300, 200);
             stage.setScene(scene);
             stage.show();
-
-
         }
-
     }
-
 }

@@ -8,10 +8,7 @@ import java.util.*;
 
 public class QuestionarioController {
 
-    private Questionario questionario;
-
     private static QuestionarioController instance;
-    private ArrayList<Questionario> collabs;
     private ArrayList<Questionario> questionarios;
     private int currentQuest;
 
@@ -40,7 +37,6 @@ public class QuestionarioController {
                 Questionario q = questionarios.get(currentQuest);
                 return q ;
             }
-
         }
         else {
             if (questionariCercati == null || currentQuestCercati >= questionariCercati.size()) {
@@ -51,14 +47,12 @@ public class QuestionarioController {
                 return q ;
             }
         }
-
     }
 
     public boolean votedQuest(String risposta, String email) {
         String codiceQuest = questionarios.get(currentQuest).getCodice();
         return MasterDAO.getInstance().votedQuest( codiceQuest, risposta, email);
     }
-
 
     public void disattivaRicerca() {
         this.ricercati = false;
@@ -145,10 +139,6 @@ public class QuestionarioController {
         this.ricercati= true;
     }
 
-    public void goToQuest(Questionario q) {
-        //TODO
-        System.out.println("Seleziono " + q.getDomanda());
-    }
 
     protected void nextQuest() {
         if (ricercati == false) {

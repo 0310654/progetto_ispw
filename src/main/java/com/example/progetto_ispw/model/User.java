@@ -11,20 +11,6 @@ public class User {
     private String nazionalita;
     private String sesso;
     private String bio;
-    private String codeUser;
-
-
-    /*public User(String username, String nome, String email, String cellulare, String dataDiNascita, String nazionalita, String sesso, String bio) {
-        this.username = username;
-        this.nome = nome;
-        this.email = email;
-        this.cellulare = cellulare;
-        this.dataDiNascita = dataDiNascita;
-        this.nazionalita = nazionalita;
-        this.sesso = sesso;
-        this.bio = bio;
-        //this.codeUser = codeUser;
-    }*/
 
     public User(String username, String nome, String email, String cellulare, String dataDiNascita, String nazionalita, String sesso, String bio) {
         this.username = username;
@@ -35,7 +21,6 @@ public class User {
         this.nazionalita = nazionalita;
         this.sesso = sesso;
         this.bio = bio;
-        this.codeUser = codeUser;
     }
 
 
@@ -101,12 +86,5 @@ public class User {
 
     public void setBio(String bio){
         this.bio = bio;
-    }
-
-    public String getCode() {
-        return this.codeUser;
-    }
-    public void setCode(String codeUser){
-        this.codeUser = codeUser;
     }
 }

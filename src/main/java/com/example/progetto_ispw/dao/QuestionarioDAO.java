@@ -2,12 +2,9 @@ package com.example.progetto_ispw.dao;
 
 import com.example.progetto_ispw.controller.MasterController;
 import com.example.progetto_ispw.model.Questionario;
-
 import java.sql.*;
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class QuestionarioDAO {
 
@@ -60,7 +57,7 @@ public class QuestionarioDAO {
         } finally {
             if (cs != null) {
                 try {
-                    cs.close();  // Chiudi sempre lo Statement per liberare risorse
+                    cs.close();  // Chiudere lo Statement per liberare risorse
                 } catch (SQLException e) {
                     System.err.println("Errore durante la chiusura dello statement: " + e.getMessage());
                 }
@@ -69,5 +66,4 @@ public class QuestionarioDAO {
         System.out.println("votato correttamente");
         return true;
     }
-
 }
