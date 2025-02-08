@@ -57,5 +57,6 @@ public class MasterDAO {
         CollabsDAO cd = new CollabsDAO(connection);
         return cd.getCollabs(email);
     }
+
 }
 

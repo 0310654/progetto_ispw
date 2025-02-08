@@ -41,15 +41,11 @@ public class QuestionarioView extends Application {
                     //prendi la risposta del bottone che ho schiacciato e mettila dentro votedQuest(risposta) qui sotto
                     System.out.println(risposta);
                     masterController.votedQuest(risposta);
-
                     MasterController.getInstance().nextQuest();
                     MasterView.getInstance().showQuestionarioView();
                 });
                 vbox.getChildren().add(voteButton);
             }
-
-
-
 
             Button backButton = new Button("Torna alla home page");
             backButton.setOnAction(event -> {

@@ -1,5 +1,7 @@
 package com.example.progetto_ispw.view;
 
+import com.example.progetto_ispw.controller.MasterController;
+import com.example.progetto_ispw.model.Questionario;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,6 +18,8 @@ public class HomePageView extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("Homepage");
+
+        MasterController masterController = MasterController.getInstance();
 
         // Creating Labels, TextField, and Buttons
         Label domandaLabel = new Label("Salve! Cosa vuoi fare oggi?:");
@@ -36,26 +40,27 @@ public class HomePageView extends Application {
         });
 
         votaButton.setOnAction(event -> {
+            MasterController.getInstance().disattivaRicerca();
             MasterView masterView = MasterView.getInstance();
-            //TODO crea showQuestionarioView
             masterView.showQuestionarioView();
         });
 
-        statisticheButton.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance();
-            //TODO crea showStatisticheView
-            //masterView.showStatisticheView();
-        });
-
         searchButton.setOnAction(event -> {
-            String searchText = searchField.getText();
-
-            if (searchText.isEmpty()) {
-                resultLabel.setText("Per favore, inserisci del testo da cercare.");
+            String ricerca = searchField.getText();
+            if (ricerca.isEmpty()) {
+                resultLabel.setText("Per favore, inserisci testo da cercare.");
             } else {
-                performSearch(searchText, resultLabel);
+                masterController.searchQuest(ricerca);
+                MasterView.getInstance().showQuestionarioView();
             }
         });
+
+        Button backButton = new Button("Torna alla home page");
+        backButton.setOnAction(event -> {
+            MasterView masterView = MasterView.getInstance();
+            masterView.showHomePageView();
+        });
+
 
         // Creating layout with GridPane
         GridPane gridPane = new GridPane();
@@ -94,7 +99,8 @@ public class HomePageView extends Application {
         stage.show();
     }
 
-    private void performSearch(String searchText, Label resultLabel) {
-        resultLabel.setText("Hai cercato: " + searchText);
-    }
+
+    //private void performSearch(String searchText, Label resultLabel) {
+        //resultLabel.setText("Hai cercato: " + searchText);
+   // }
 }

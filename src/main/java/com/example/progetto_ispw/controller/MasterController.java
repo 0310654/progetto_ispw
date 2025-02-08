@@ -53,12 +53,6 @@ public class MasterController {
     }
 
 
-    //TODO restituisce una lista di questionari in base alla parola cercata nella barra nella homepage
-    public ArrayList<Questionario> getQuestSearched() {
-        QuestionarioController.getInstance().getQuestSearched();
-        return null;
-    }
-
     public void goToQuest(Questionario q) {
         QuestionarioController.getInstance().goToQuest(q);
     }
@@ -91,6 +85,15 @@ public class MasterController {
         String email = getCurrentUser().getEmail();
         return cc.getCollabs(email);
     }
+
+    public void disattivaRicerca() {
+        QuestionarioController.getInstance().disattivaRicerca();
+    }
+
+    public void searchQuest(String resultLabel) {
+        QuestionarioController.getInstance().cercaQuest(resultLabel);
+    }
+
 
    /* public boolean internalLogin(String token) {
         InternalLoginController ilc = new InternalLoginController();

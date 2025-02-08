@@ -36,10 +36,6 @@ public class GeneralLoginView extends Application {
             masterView.showLoginView();
         });
 
-        loginButtonInternal.setOnAction(event -> {
-            MasterView masterView = MasterView.getInstance();
-            masterView.showInternalLoginView();
-        });
 
         //TODO cancella
         Button directlogin = new Button("login diretto");

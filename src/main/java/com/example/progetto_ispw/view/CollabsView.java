@@ -18,7 +18,6 @@ import java.util.*;
 
 public class CollabsView extends Application {
     private Stage primaryStage;
-    private TableView table = new TableView();
 
     @Override
     public void start(Stage stage) {

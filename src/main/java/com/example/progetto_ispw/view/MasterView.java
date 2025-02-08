@@ -42,14 +42,14 @@ public class MasterView {
      * Mostra la vista di login interno.
      * Consente agli utenti di inserire un token per accedere come addetti ai lavori.
      */
-    public void showInternalLoginView() {
+    /*public void showInternalLoginView() {
         LoginInternalView liv = new LoginInternalView();
         try {
             liv.start(this.stage);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
     /**
      * Mostra la vista generale del login.
@@ -128,4 +128,22 @@ public class MasterView {
             throw new RuntimeException(e);
         }
     }
+
+    public void showNonTrovatoView() {
+        NonTrovatoView nt = new NonTrovatoView();
+        try {
+            nt.start(this.stage);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /*public void showRicercaView() {
+        RicercaView cv = new RicercaView();
+        try {
+            cv.start(this.stage);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }*/
 }

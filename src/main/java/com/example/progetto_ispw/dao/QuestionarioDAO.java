@@ -1,10 +1,13 @@
 package com.example.progetto_ispw.dao;
 
+import com.example.progetto_ispw.controller.MasterController;
 import com.example.progetto_ispw.model.Questionario;
 
 import java.sql.*;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class QuestionarioDAO {
 
@@ -17,8 +20,10 @@ public class QuestionarioDAO {
     protected ArrayList<Questionario> getQuestionarios() {
         ArrayList<Questionario> questionarios = new ArrayList<>();
         CallableStatement callablestatement = null;
+        String email = MasterController.getInstance().getCurrentUser().getEmail();
         try {
-            callablestatement = this.connection.prepareCall("call getquestionari();");
+            callablestatement = this.connection.prepareCall("call getquestionari(?);");
+            callablestatement.setString(1, email);
             callablestatement.execute();
             ResultSet resultSet = callablestatement.getResultSet();
             while (resultSet.next()) {
@@ -32,7 +37,7 @@ public class QuestionarioDAO {
             }
             return questionarios;
         } catch (SQLException e) {
-            System.err.println("Errore durante il controllo delle scadenze: " + e.getMessage());
+            System.err.println("Errore " + e.getMessage());
             return null;
         }
     }
@@ -41,7 +46,7 @@ public class QuestionarioDAO {
 
         CallableStatement cs = null;
         try {
-            cs = connection.prepareCall("{call voteQuest(?,?)}");
+            cs = connection.prepareCall("{call voteQuest(?,?,?)}");
 
             cs.setString(1, codiceQuest);
             cs.setString(2, risposta);
@@ -52,6 +57,14 @@ public class QuestionarioDAO {
         } catch (SQLException e) {
             System.err.println("errore nella votazione: " + e.getMessage());
             throw new RuntimeException(e);
+        } finally {
+            if (cs != null) {
+                try {
+                    cs.close();  // Chiudi sempre lo Statement per liberare risorse
+                } catch (SQLException e) {
+                    System.err.println("Errore durante la chiusura dello statement: " + e.getMessage());
+                }
+            }
         }
         System.out.println("votato correttamente");
         return true;
