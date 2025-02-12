@@ -1,0 +1,127 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"477ac831-5a88-41a4-8fd4-34532d38c1e7\" name=\"Changes\" comment=\"getQuestionario modified\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/LoginUserController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/LoginUserController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/MasterController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/MasterController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/QuestionarioController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/QuestionarioController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/UserController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/UserController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/LoginUserDAO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/LoginUserDAO.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/MasterDAO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/MasterDAO.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/QuestionarioDAO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/QuestionarioDAO.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/UserDAO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/UserDAO.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/SchedaUtente.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/SchedaUtente.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/User.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/User.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RegistrazioneUserView.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RegistrazioneUserView.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;0310654&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/0310654/progetto_ispw.git&quot;,\n    &quot;accountId&quot;: &quot;a2ab0725-9af0-44ec-bff1-1b8699585591&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 7\n}</component>\n  <component name=\"ProjectId\" id=\"2imW744HcNwluBq9ie5RtqGpsmq\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Application.CollabsView.executor&quot;: &quot;Run&quot;,\n    &quot;Application.HomePageView.executor&quot;: &quot;Run&quot;,\n    &quot;Application.LoginInternalView.executor&quot;: &quot;Run&quot;,\n    &quot;Application.QuestionariConsigliatiView.executor&quot;: &quot;Run&quot;,\n    &quot;Application.QuestionarioView.executor&quot;: &quot;Run&quot;,\n    &quot;Application.RicercaView.executor&quot;: &quot;Run&quot;,\n    &quot;Application.SchedaPersonaleView.executor&quot;: &quot;Run&quot;,\n    &quot;Application.startFromLogin.executor&quot;: &quot;Run&quot;,\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/ariannadaniello/IdeaProjects/progetto_ispw&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.4643678&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateClassDialog.RecentsKey\">\n      <recent name=\"com.example.progetto_ispw.dao\" />\n      <recent name=\"com.example.progetto_ispw.controller\" />\n      <recent name=\"com.example.progetto_ispw.view\" />\n      <recent name=\"com.example.progetto_ispw\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"com.example.progetto_ispw\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"startFromLogin\" type=\"Application\" factoryName=\"Application\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.progetto_ispw.main\" />\n      <module name=\"progetto_ispw\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62\" />\n        <option value=\"bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"477ac831-5a88-41a4-8fd4-34532d38c1e7\" name=\"Changes\" comment=\"\" />\n      <created>1720096062187</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1720096062187</updated>\n      <workItem from=\"1720096063386\" duration=\"5843000\" />\n      <workItem from=\"1720170545682\" duration=\"21990000\" />\n      <workItem from=\"1720343577047\" duration=\"233000\" />\n      <workItem from=\"1720343861581\" duration=\"55000\" />\n      <workItem from=\"1720343923720\" duration=\"36303000\" />\n      <workItem from=\"1720771765408\" duration=\"21239000\" />\n      <workItem from=\"1738397702765\" duration=\"25082000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Commit1\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720187758904</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720187758905</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Commit2\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720189696884</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720189696885</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Commit2conScrollPane\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720191037365</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720191037365</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Commit3\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720271632515</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720271632515</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"add view files\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720343358825</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720343358825</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"temp commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720361424116</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720361424116</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"temp commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720365187188</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720365187188</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"controller modified\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720517551456</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720517551456</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"controller modified 2\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720517647821</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720517647821</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"controller modified 3\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720517675101</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720517675101</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"login added (user and internal user)\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720519416466</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720519416466</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"return modified\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720527356145</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720527356145</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"return modified\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720530824828</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720530824828</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"login modified\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720778256083</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720778256083</updated>\n    </task>\n    <task id=\"LOCAL-00015\" summary=\"getQuestionario modified\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1720795434807</created>\n      <option name=\"number\" value=\"00015\" />\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1720795434807</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"16\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Commit1\" />\n    <MESSAGE value=\"Commit2\" />\n    <MESSAGE value=\"Commit2conScrollPane\" />\n    <MESSAGE value=\"Commit3\" />\n    <MESSAGE value=\"add view files\" />\n    <MESSAGE value=\"temp commit\" />\n    <MESSAGE value=\"controller modified\" />\n    <MESSAGE value=\"controller modified 2\" />\n    <MESSAGE value=\"controller modified 3\" />\n    <MESSAGE value=\"login added (user and internal user)\" />\n    <MESSAGE value=\"return modified\" />\n    <MESSAGE value=\"login modified\" />\n    <MESSAGE value=\"getQuestionario modified\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"getQuestionario modified\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,21 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="getQuestionario modified">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/LoginUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/LoginUserController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/MasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/MasterController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/QuestionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/QuestionarioController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/UserController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/LoginUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/LoginUserDAO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/MasterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/MasterDAO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/QuestionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/QuestionarioDAO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/UserDAO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/SchedaUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/SchedaUtente.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/User.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RegistrazioneUserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RegistrazioneUserView.java" afterDir="false" />
+-    </list>
++    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="getQuestionario modified" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -34,6 +20,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+   &quot;lastFilter&quot;: {
+@@ -58,37 +45,37 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.CollabsView.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.HomePageView.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.LoginInternalView.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.QuestionariConsigliatiView.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.QuestionarioView.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.RicercaView.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.SchedaPersonaleView.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.startFromLogin.executor&quot;: &quot;Run&quot;,
+-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/Users/ariannadaniello/IdeaProjects/progetto_ispw&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.4643678&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.CollabsView.executor": "Run",
++    "Application.HomePageView.executor": "Run",
++    "Application.LoginInternalView.executor": "Run",
++    "Application.QuestionariConsigliatiView.executor": "Run",
++    "Application.QuestionarioView.executor": "Run",
++    "Application.RicercaView.executor": "Run",
++    "Application.SchedaPersonaleView.executor": "Run",
++    "Application.startFromLogin.executor": "Run",
++    "Downloaded.Files.Path.Enabled": "false",
++    "Repository.Attach.Annotations": "false",
++    "Repository.Attach.JavaDocs": "false",
++    "Repository.Attach.Sources": "false",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "recupero",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "/Users/ariannadaniello/IdeaProjects/progetto_ispw",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "Libraries",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.4643678",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CreateClassDialog.RecentsKey">
+       <recent name="com.example.progetto_ispw.dao" />
+@@ -258,6 +245,17 @@
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Commit1" />

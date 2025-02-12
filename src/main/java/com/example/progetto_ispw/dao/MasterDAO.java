@@ -39,7 +39,7 @@ public class MasterDAO {
     }
 
     public boolean  registrazioneUser(String username, String nome, String email, String password, String cellulare, String dataDiNascita, String nazionalita, String sesso, String bio) {
-        UserDAO ud = new UserDAO(connection);
+        LoginUserDAO ud = new LoginUserDAO(connection);
         return ud.registrazioneUser(username,nome,email, password, cellulare,dataDiNascita,nazionalita,sesso,bio);
     }
 

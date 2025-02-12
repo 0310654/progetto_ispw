@@ -2,6 +2,7 @@ module com.example.progetto_ispw {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    //requires org.junit.jupiter.api;
 
 
     opens com.example.progetto_ispw to javafx.fxml;

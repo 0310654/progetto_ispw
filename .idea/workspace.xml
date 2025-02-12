@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="ricerca in teoria completata">
+    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment=" in teoria codice finito (speriamo anche in pratica)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/GeneralLoginView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/HomePageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/HomePageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginInternalView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginUserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/LoginUserView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/MasterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/MasterView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RegistrazioneUserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/RegistrazioneUserView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/LoginUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/LoginUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/MasterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/MasterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +70,8 @@
     "Application.SchedaPersonaleView.executor": "Run",
     "Application.startFromLogin.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.Tester.connectionTest.executor": "Run",
+    "JUnit.Tester.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -80,6 +80,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/ariannadaniello/IdeaProjects/progetto_ispw/src/test/java",
     "last_opened_file_path": "/Users/ariannadaniello/IdeaProjects/progetto_ispw",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -87,8 +88,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4643678",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -100,6 +102,7 @@
       <recent name="com.example.progetto_ispw" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="test" />
       <recent name="com.example.progetto_ispw" />
     </key>
   </component>
@@ -111,6 +114,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tester.connectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progetto_ispw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.Tester" />
+      <option name="METHOD_NAME" value="connectionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Tester.connectionTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -288,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739009710379</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary=" in teoria codice finito (speriamo anche in pratica)">
+      <option name="closed" value="true" />
+      <created>1739024833892</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1739024833892</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +344,7 @@
     <MESSAGE value="login, registrazione e getCollabs completate" />
     <MESSAGE value="votazione al questionario(nei questionari consigliati) e collaborazioni completate" />
     <MESSAGE value="ricerca in teoria completata" />
-    <option name="LAST_COMMIT_MESSAGE" value="ricerca in teoria completata" />
+    <MESSAGE value=" in teoria codice finito (speriamo anche in pratica)" />
+    <option name="LAST_COMMIT_MESSAGE" value=" in teoria codice finito (speriamo anche in pratica)" />
   </component>
 </project>

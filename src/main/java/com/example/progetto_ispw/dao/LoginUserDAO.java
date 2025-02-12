@@ -22,12 +22,11 @@ public class LoginUserDAO {
         String nazionalita;
         String sesso;
         String bio;
-        String codiceUtente;
         ArrayList<String> attributi = new ArrayList<>();
 
         CallableStatement cs = null;
         try {
-            cs = connection.prepareCall("{call loginUser(?,?,?,?,?,?,?,?,?,?)}");
+            cs = connection.prepareCall("{call loginUser(?,?,?,?,?,?,?,?,?)}");
             cs.setString(1, email);
             cs.setString(2, pass);
             cs.registerOutParameter(3, Types.VARCHAR);
@@ -37,7 +36,6 @@ public class LoginUserDAO {
             cs.registerOutParameter(7, Types.VARCHAR);
             cs.registerOutParameter(8, Types.VARCHAR);
             cs.registerOutParameter(9, Types.VARCHAR);
-            cs.registerOutParameter(10, Types.VARCHAR);
 
             cs.executeQuery();
             username = cs.getString(3);
@@ -47,7 +45,6 @@ public class LoginUserDAO {
             nazionalita = cs.getString(7);
             sesso = cs.getString(8);
             bio = cs.getString(9);
-            codiceUtente = cs.getString(10);
 
             attributi.add(username);
             attributi.add(nome);
@@ -56,13 +53,47 @@ public class LoginUserDAO {
             attributi.add(nazionalita);
             attributi.add(sesso);
             attributi.add(bio);
-            attributi.add(codiceUtente);
         } catch (SQLException e) {
             System.err.println("errore nel login");
             throw new RuntimeException(e);
         }
-        System.out.println("login riuscito - username: " + username);
+        System.out.println("login riuscito:\n" +
+                "username: " + username + "\n" +
+                "email: " + email + "\n" +
+                "nome: " + nome + "\n");
         return attributi;
+    }
+
+    public boolean registrazioneUser(
+            String username,
+            String nome,
+            String email,
+            String password,
+            String cellulare,
+            String dataDiNascita,
+            String nazionalita,
+            String sesso,
+            String bio) {
+
+        String call = "{call registrazioneUser(?,?,?,?,?,?,?,?,?)}" ;
+
+        try (CallableStatement callableStatement = this.connection.prepareCall(call)) {
+            callableStatement.setString(1, username);
+            callableStatement.setString(2, nome);
+            callableStatement.setString(3, email);
+            callableStatement.setString(4, password);
+            callableStatement.setString(5, cellulare);
+            callableStatement.setString(6, dataDiNascita);
+            callableStatement.setString(7, nazionalita);
+            callableStatement.setString(8, sesso);
+            callableStatement.setString(9, bio);
+            callableStatement.execute();
+            System.out.println("Fatto! Registrazione riuscita!");
+            return true;
+        } catch (SQLException e) {
+            System.err.println("Errore durante la registrazione: " + e.getMessage());
+            return false;
+        }
     }
 }
 
