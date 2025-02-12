@@ -17,8 +17,12 @@ public class QuestionarioController {
     private boolean ricercati = false;
 
     private QuestionarioController() {
+        setupQuestionari();
+    }
+
+    protected void setupQuestionari(){
         this.questionarios = MasterDAO.getInstance().getQuestionarios();
-        currentQuest = 0;
+        this.currentQuest = 0;
     }
 
     public static QuestionarioController getInstance() {
@@ -124,10 +128,10 @@ public class QuestionarioController {
             if (minDistance != null) {
                 levVal.put(q, minDistance);
             }
-            else if (minDistance == null)  {
-                MasterView masterView = MasterView.getInstance();
-                masterView.showNonTrovatoView();
-            }
+        }
+        if(levVal.isEmpty()){
+            MasterView masterView = MasterView.getInstance();
+            masterView.showNonTrovatoView();
         }
         List<Map.Entry<Questionario, Integer>> list = new ArrayList<>(levVal.entrySet());
         list.sort(Comparator.comparingInt(p -> p.getValue()));

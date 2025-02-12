@@ -6,16 +6,26 @@ public class User {
     private String username; //Il nome utente univoco scelto dall'utente.
     private String nome; //Il nome reale o visualizzato dell'utente.
     private String email;
+    private String password;
     private String cellulare;
     private String dataDiNascita;
     private String nazionalita;
     private String sesso;
     private String bio;
 
-    public User(String username, String nome, String email, String cellulare, String dataDiNascita, String nazionalita, String sesso, String bio) {
+    public User(String username,
+                String nome,
+                String email,
+                String password,
+                String cellulare,
+                String dataDiNascita,
+                String nazionalita,
+                String sesso,
+                String bio) {
         this.username = username;
         this.nome = nome;
         this.email = email;
+        this.password = password;
         this.cellulare = cellulare;
         this.dataDiNascita = dataDiNascita;
         this.nazionalita = nazionalita;
@@ -46,6 +56,12 @@ public class User {
 
     public void setEmail(String email){
         this.email = email;
+    }
+    public void getPass(String password){
+        this.password = password;
+    }
+    public void setPass(String password){
+        this.password = password;
     }
 
     public String getCellulare(){

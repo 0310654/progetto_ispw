@@ -28,6 +28,7 @@ public class LoginUserController {
                 user = new User(attributi.get(0), //username
                         attributi.get(1), //nome
                         email,
+                        password,
                         attributi.get(2), //cellulare
                         attributi.get(3), //datadinascita
                         attributi.get(4), //nazionalita
@@ -44,6 +45,10 @@ public class LoginUserController {
 
     public User getUser() {
         return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
 
