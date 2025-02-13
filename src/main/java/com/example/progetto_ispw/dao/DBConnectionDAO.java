@@ -17,12 +17,10 @@ public class DBConnectionDAO {
         String password;
 
         try {
-            //InputStream inputStream = DBConnectionDAO.class.getClassLoader().getResourceAsStream(connectionPath);
             FileReader fr = new FileReader(connectionPath);
             if (fr == null) {
                 throw new IllegalArgumentException("file non trovato: " + connectionPath);
             }
-            //BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             BufferedReader br = new BufferedReader(fr);
             stringConnessione = br.readLine().split("=")[1];
             username = br.readLine().split("=")[1];
