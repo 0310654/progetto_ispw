@@ -14,6 +14,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class HomePageView extends Application {
+
+    /**
+     *
+     * @param stage
+     */
     @Override
     public void start(Stage stage) {
         stage.setTitle("Homepage");

@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="tester parte 1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/TestController.java" afterDir="false" />
+    <list default="true" id="477ac831-5a88-41a4-8fd4-34532d38c1e7" name="Changes" comment="tester parte 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/ControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/LoginUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/LoginUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/QuestionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/QuestionarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/TesterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/TesterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/Tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/DBConnectionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/dao/DBConnectionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/HomePageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/progetto_ispw/view/HomePageView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,12 +99,15 @@
       <recent name="com.example.progetto_ispw.controller" />
       <recent name="com.example.progetto_ispw" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/progetto_ispw" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="test" />
       <recent name="com.example.progetto_ispw" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.startFromLogin">
     <configuration name="startFromLogin" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.example.progetto_ispw.main" />
       <module name="progetto_ispw" />
@@ -350,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739357020809</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="tester parte 2">
+      <option name="closed" value="true" />
+      <created>1739376556616</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1739376556617</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,6 +380,7 @@
     <MESSAGE value="ricerca in teoria completata" />
     <MESSAGE value=" in teoria codice finito (speriamo anche in pratica)" />
     <MESSAGE value="tester parte 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="tester parte 1" />
+    <MESSAGE value="tester parte 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="tester parte 2" />
   </component>
 </project>

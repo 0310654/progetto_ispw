@@ -1,5 +1,6 @@
 package com.example.progetto_ispw.dao;
 
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,12 +8,29 @@ import java.sql.SQLException;
 public class DBConnectionDAO {
 
     private static DBConnectionDAO instance;
+    private static String connectionPath = "src/main/resources/com/example/progetto_ispw/dbConfiguration.txt";
     static Connection connection;
 
     private DBConnectionDAO() {
-        String stringConnessione = "jdbc:mysql://localhost:3306/progetto_ispw";
-        String username = "root";
-        String password = "password";
+        String stringConnessione;
+        String username;
+        String password;
+
+        try {
+            //InputStream inputStream = DBConnectionDAO.class.getClassLoader().getResourceAsStream(connectionPath);
+            FileReader fr = new FileReader(connectionPath);
+            if (fr == null) {
+                throw new IllegalArgumentException("file non trovato: " + connectionPath);
+            }
+            //BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            BufferedReader br = new BufferedReader(fr);
+            stringConnessione = br.readLine().split("=")[1];
+            username = br.readLine().split("=")[1];
+            password = br.readLine().split("=")[1];
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         try {
             connection = DriverManager.getConnection(stringConnessione, username, password);
         } catch(SQLException e) {
