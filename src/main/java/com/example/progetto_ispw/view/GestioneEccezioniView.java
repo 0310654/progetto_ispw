@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class NonTrovatoView extends Application {
+public class GestioneEccezioniView extends Application {
 
     @Override
     public void start(Stage stage) {

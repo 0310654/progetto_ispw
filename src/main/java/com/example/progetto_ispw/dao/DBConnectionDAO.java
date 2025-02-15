@@ -17,16 +17,37 @@ public class DBConnectionDAO {
         String password;
 
         try {
-            FileReader fr = new FileReader(connectionPath);
-            if (fr == null) {
-                throw new IllegalArgumentException("file non trovato: " + connectionPath);
+            File file = new File(connectionPath);
+            if (!file.exists()) {
+                throw new FileNotFoundException("File non trovato: " + connectionPath);
             }
+
+            FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
-            stringConnessione = br.readLine().split("=")[1];
-            username = br.readLine().split("=")[1];
-            password = br.readLine().split("=")[1];
+
+            String line = br.readLine();
+            if (line == null || !line.contains("=")) {
+                throw new IllegalArgumentException("Formato non valido nel file di configurazione");
+            }
+            stringConnessione = line.split("=")[1];
+
+            line = br.readLine();
+            if (line == null || !line.contains("=")) {
+                throw new IllegalArgumentException("Formato non valido: manca il parametro username");
+            }
+            username = line.split("=")[1];
+
+            line = br.readLine();
+            if (line == null || !line.contains("=")) {
+                throw new IllegalArgumentException("Formato non valido: manca il parametro password");
+            }
+            password = line.split("=")[1];
+
+            br.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("Errore: impossibile trovare il file di configurazione " + connectionPath, e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Errore durante la lettura del file di configurazione", e);
         }
 
         try {

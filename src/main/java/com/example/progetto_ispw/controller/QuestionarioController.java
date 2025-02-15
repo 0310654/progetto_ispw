@@ -98,6 +98,24 @@ public class QuestionarioController {
 
         this.questionariCercati = new ArrayList<>();
         this.currentQuestCercati = 0;
+        HashMap<Questionario, Integer> levVal ;
+        try {
+            levVal = controllaRicerca(input);
+        } catch (NonTrovatoException e) {
+            throw new RuntimeException(e);
+        }
+        List<Map.Entry<Questionario, Integer>> list = new ArrayList<>(levVal.entrySet());
+        list.sort(Comparator.comparingInt(p -> p.getValue()));
+        for (Map.Entry<Questionario, Integer> entry : list ) {
+            questionariCercati.add(entry.getKey());
+            System.out.println(entry.getKey().getDomanda());
+            System.out.println(entry.getValue());
+        }
+        this.ricercati= true;
+    }
+
+    private HashMap<Questionario, Integer> controllaRicerca(String input) throws NonTrovatoException {
+
         HashMap<Questionario, Integer> levVal = new HashMap<>();
 
         for ( Questionario q : questionarios) {
@@ -137,17 +155,9 @@ public class QuestionarioController {
             }
         }
         if(levVal.isEmpty()){
-            MasterView masterView = MasterView.getInstance();
-            masterView.showNonTrovatoView();
+            throw new NonTrovatoException("Non ci sono questionari corrispondenti alla ricerca");
         }
-        List<Map.Entry<Questionario, Integer>> list = new ArrayList<>(levVal.entrySet());
-        list.sort(Comparator.comparingInt(p -> p.getValue()));
-        for (Map.Entry<Questionario, Integer> entry : list ) {
-            questionariCercati.add(entry.getKey());
-            System.out.println(entry.getKey().getDomanda());
-            System.out.println(entry.getValue());
-        }
-        this.ricercati= true;
+        return levVal;
     }
 
 

@@ -110,7 +110,7 @@ public class MasterView {
      * Consente agli utenti di tornare alla home page oppure di votare ai questionari consigliati dal sistema.
      */
     public void showNonTrovatoView() {
-        NonTrovatoView nt = new NonTrovatoView();
+        GestioneEccezioniView nt = new GestioneEccezioniView();
         try {
             nt.start(this.stage);
         } catch (Exception e) {

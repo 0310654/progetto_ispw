@@ -1,6 +1,8 @@
 package com.example.progetto_ispw.controller;
 import com.example.progetto_ispw.dao.MasterDAO;
 import com.example.progetto_ispw.model.User;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -19,10 +21,24 @@ public class LoginUserController {
         return instance;
     }
 
-    public boolean login(String email, String password) {
+    private boolean controllaEmail(String email, String password) throws WrongLoginException {
         String EMAIL_REGEX = "^[^@]+@[^@]+\\.[^@]+$";
-        Pattern pattern = Pattern.compile(EMAIL_REGEX);
-        if (email != null && pattern.matcher(email).matches() && password != null) {
+        Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
+        String PASSWORD_REGEX = "^[a-zA-Z0-9]{8,}$";
+        Pattern PASSWORD_PATTERN = Pattern.compile(PASSWORD_REGEX);
+
+
+        if (email != null && EMAIL_PATTERN.matcher(email).matches() && password != null && PASSWORD_PATTERN.matcher(password).matches()) {
+            return EMAIL_PATTERN.matcher(email).matches();
+        }
+        else {
+            throw new WrongLoginException("Formato email o password non valido");
+        }
+    }
+
+    public boolean login(String email, String password) {
+        try {
+            controllaEmail(email, password);
             ArrayList<String> attributi = MasterDAO.getInstance().loginUser(email, password);
             if (attributi != null && attributi.get(0) != null) {
                 user = new User(attributi.get(0), //username
@@ -36,9 +52,8 @@ public class LoginUserController {
                         attributi.get(6)); //bio
                 return true;
             }
-            return false;
-        } else {
-            System.err.println("Invalid email or password");
+        } catch (WrongLoginException e) {
+            System.err.println("errore nel login: " + e.getMessage());
         }
         return false;
     }
