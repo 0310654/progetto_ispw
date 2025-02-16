@@ -24,11 +24,8 @@ public class LoginUserController {
     private boolean controllaEmail(String email, String password) throws WrongLoginException {
         String EMAIL_REGEX = "^[^@]+@[^@]+\\.[^@]+$";
         Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
-        String PASSWORD_REGEX = "^[a-zA-Z0-9]{8,}$";
-        Pattern PASSWORD_PATTERN = Pattern.compile(PASSWORD_REGEX);
 
-
-        if (email != null && EMAIL_PATTERN.matcher(email).matches() && password != null && PASSWORD_PATTERN.matcher(password).matches()) {
+        if (email != null && EMAIL_PATTERN.matcher(email).matches() && password != null) {
             return EMAIL_PATTERN.matcher(email).matches();
         }
         else {
