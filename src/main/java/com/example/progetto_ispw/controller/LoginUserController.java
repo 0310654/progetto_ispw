@@ -22,7 +22,7 @@ public class LoginUserController {
     }
 
     private boolean controllaEmail(String email, String password) throws WrongLoginException {
-        String EMAIL_REGEX = "^[^@]+@[^@]+\\.[^@]+$";
+        /*String EMAIL_REGEX = "^[^@]+@[^@]+\\.[^@]+$";
         Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
 
         if (email != null && EMAIL_PATTERN.matcher(email).matches() && password != null) {
@@ -30,7 +30,14 @@ public class LoginUserController {
         }
         else {
             throw new WrongLoginException("Formato email o password non valido");
+        }*/
+        String EMAIL_REGEX = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+        Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
+        if (email == null || email.trim().isEmpty() && !EMAIL_PATTERN.matcher(email).matches() ) {
+            throw new WrongLoginException("Formato email o password non valido");
         }
+        return true;
+
     }
 
     public boolean login(String email, String password) {
