@@ -22,15 +22,32 @@ public class LoginUserController {
     }
 
     private boolean controllaEmail(String email, String password) throws WrongLoginException {
-        String EMAIL_REGEX = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
-        Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
 
-        if (email != null && EMAIL_PATTERN.matcher(email).matches() && password != null) {
-            return EMAIL_PATTERN.matcher(email).matches();
-        }
-        else {
+        if (email == null || email.trim().isEmpty() && password==null) {
             throw new WrongLoginException("Formato email o password non valido");
         }
+
+        // Controllo che ci sia una sola "@"
+        int atIndex = email.indexOf('@');
+        if (atIndex == -1 || atIndex != email.lastIndexOf('@')) {
+            throw new WrongLoginException("Formato email o password non valido");
+        }
+
+        // Separazione in due parti: local-part e dominio
+        String localPart = email.substring(0, atIndex);
+        String domainPart = email.substring(atIndex + 1);
+
+        // Controllo che entrambe le parti abbiano almeno un carattere
+        if (localPart.isEmpty() || domainPart.isEmpty()) {
+            throw new WrongLoginException("Formato email o password non valido");
+        }
+
+        // Controllo che il dominio abbia almeno un punto e non sia all'inizio o alla fine
+        int dotIndex = domainPart.indexOf('.');
+        if (dotIndex == -1 || dotIndex == 0 || dotIndex == domainPart.length() - 1) {
+            throw new WrongLoginException("Formato email o password non valido");
+        }
+        return true;
     }
 
     public boolean login(String email, String password) {
