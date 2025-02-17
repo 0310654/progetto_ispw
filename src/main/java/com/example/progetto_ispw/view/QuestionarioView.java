@@ -7,8 +7,10 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.control.ScrollPane;
 
 
 public class QuestionarioView extends Application {
@@ -25,6 +27,7 @@ public class QuestionarioView extends Application {
 
             VBox vbox = new VBox(10);
             Label domandaLabel = new Label(questionario.getDomanda());
+            domandaLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
             vbox.setPadding(new Insets(20, 20, 20, 20));
             vbox.getChildren().addAll(domandaLabel);
 
@@ -54,9 +57,17 @@ public class QuestionarioView extends Application {
                 MasterView.getInstance().showQuestionarioView();
             });
 
-            vbox.getChildren().addAll(backButton, skipButton);
+            HBox navigationBox = new HBox(10);
+            navigationBox.setPadding(new Insets(10, 0, 0, 0));
 
-            Scene scene = new Scene(vbox, 300, 200);
+            navigationBox.getChildren().addAll(backButton, skipButton);
+            vbox.getChildren().add(navigationBox);
+
+            ScrollPane scrollPane = new ScrollPane(vbox);
+            scrollPane.setFitToWidth(true); // Fai in modo che il contenuto si adatti alla larghezza
+
+
+            Scene scene = new Scene(scrollPane);
             stage.setScene(scene);
             stage.show();
         }

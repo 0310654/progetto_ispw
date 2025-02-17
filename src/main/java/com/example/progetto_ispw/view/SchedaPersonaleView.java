@@ -30,7 +30,7 @@ public class SchedaPersonaleView extends Application {
 
         Button questionariCollaboratiButton = new Button("Questionari a cui hai collaborato");
         Button backButton = new Button("Torna alla home page");
-        Button modificaBioButton = new Button("Modifica bio");
+        //Button modificaBioButton = new Button("Modifica bio");
 
         questionariCollaboratiButton.setOnAction(event -> {
             MasterView masterView = MasterView.getInstance();
@@ -44,13 +44,13 @@ public class SchedaPersonaleView extends Application {
 
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(20, 20, 20, 20));
-        vbox.getChildren().addAll( usernameLabel, bioLabel, questionariCollaboratiButton, modificaBioButton);
+        vbox.getChildren().addAll( usernameLabel, bioLabel, questionariCollaboratiButton, backButton);
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(vbox);
         scrollPane.setFitToWidth(true);
 
-        Scene scene = new Scene(scrollPane, 300, 200);
+        Scene scene = new Scene(scrollPane);
         stage.setScene(scene);
         stage.show();
     }

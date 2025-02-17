@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class GestioneEccezioniView extends Application {
+public class NonTrovatoView extends Application {
 
     @Override
     public void start(Stage stage) {
@@ -52,10 +52,9 @@ public class GestioneEccezioniView extends Application {
         scrollPane.setContent(vbox);
         scrollPane.setFitToWidth(true);
 
-        Scene scene = new Scene(scrollPane, 400, 300);
+        Scene scene = new Scene(scrollPane);
         stage.setScene(scene);
 
-        stage.sizeToScene();
         stage.show();
     }
 }
