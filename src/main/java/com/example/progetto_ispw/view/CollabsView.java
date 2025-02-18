@@ -23,22 +23,31 @@ public class CollabsView extends Application {
 
         this.primaryStage = stage;
         primaryStage.setTitle("Collaborazioni");
-        //primaryStage.setWidth(300);
-        //primaryStage.setHeight(500);
+
+        /**
+         * Ottiene la lista delle collaborazioni tramite il controller principale
+         * e la converte in una lista osservabile.
+         */
 
         ObservableList<AbstractMap.SimpleEntry<String, String>> collabs = FXCollections.observableArrayList(MasterController.getInstance().getCollabs());
-        for (AbstractMap.SimpleEntry<String, String> collab : collabs) {
-            System.out.println(collab.getKey() + " " + collab.getValue());
-        }
+        //VBox che conterrà le etichette per ogni domanda/risposta.
         VBox vbox = new VBox(10);
+
+        /**
+         * Ciclo su ogni coppia domanda/risposta e creo le etichette per mostrarle nella UI.
+         * Aggiungo anche un separatore tra ogni coppia di etichette.
+         */
         for (AbstractMap.SimpleEntry<String, String> pair : collabs) {
-            // Crea le etichette per ogni coppia domanda/risposta
             Label domandaLabel = new Label("Domanda : \"" + pair.getKey() + "\"");
             Label rispostaLabel = new Label("La tua risposta : \"" + pair.getValue() + "\"");
             rispostaLabel.setStyle("-fx-font-weight: bold;");
             vbox.getChildren().addAll(domandaLabel, rispostaLabel, new Separator());
         }
 
+        /**
+         * L'AnchorPane permette di ancorare i suoi figli a uno o più bordi della finestra,
+         * facilitando la gestione del layout dinamico e delle dimensioni dei componenti.
+         */
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.getChildren().add(vbox);
         AnchorPane.setTopAnchor(vbox, 50.0); // Distanza dal bordo superiore
@@ -58,7 +67,6 @@ public class CollabsView extends Application {
 
         vbox.getChildren().addAll(backButton);
 
-        //Scene scene = new Scene(scrollPane, 300, 200);
         Scene scene = new Scene(scrollPane);
         primaryStage.setScene(scene);
         primaryStage.show();

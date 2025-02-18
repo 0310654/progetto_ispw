@@ -19,7 +19,11 @@ public class NonTrovatoView extends Application {
 
         Label avvisoLabel = new Label("Non abbiamo trovato questionari corrispondenti alla tua ricerca");
 
-
+        /**
+         * pulsante per tornare alla home page.
+         * Quando il pulsante viene cliccato, disabilita la modalità
+         * di ricerca e mostra la home page.
+         */
         Button homePageButton = new Button("Torna alla home");
         homePageButton.setOnAction(event -> {
             MasterController.getInstance().disattivaRicerca();
@@ -27,6 +31,10 @@ public class NonTrovatoView extends Application {
             masterView.showHomePageView();
         });
 
+        /**
+         * Crea un pulsante per rispondere ai questionari consigliati.
+         * Quando il pulsante viene cliccato, disabilita la ricerca e mostra la vista dei questionari.
+         */
         Button votaButton = new Button("Rispondi ai questionari consigliati");
         votaButton.setOnAction(event -> {
             MasterController.getInstance().disattivaRicerca();

@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Classe che gestisce le operazioni di lettura e scrittura su file CSV relativi ai questionari e alle risposte.
+ * La classe è progettata per interagire con due file: uno che contiene i questionari e uno che memorizza le risposte.
+ */
 public class QuestionarioFileSystemDAO {
 
     private static QuestionarioFileSystemDAO instance;
@@ -21,6 +25,12 @@ public class QuestionarioFileSystemDAO {
         this.connection = connection;
     }
 
+    /**
+     * Recupera i questionari da un file CSV e li converte in oggetti Questionario.
+     *
+     * @return un ArrayList contenente i questionari letti dal file.
+     * @throws RuntimeException in caso di errori durante la lettura del file.
+     */
     protected ArrayList<Questionario> getQuestionarios(){
         ArrayList<Questionario> questionarios = new ArrayList<>();
         String codiceQuest;
@@ -60,7 +70,14 @@ public class QuestionarioFileSystemDAO {
 
     }
 
-
+    /**
+     * Registra una risposta a un questionario in un file CSV.
+     *
+     * @param codiceQuest il codice identificativo del questionario.
+     * @param risposta la risposta fornita dall'utente.
+     * @param email l'email dell'utente che ha risposto.
+     * @return true se la risposta è stata salvata correttamente, false altrimenti.
+     */
     protected boolean votedQuest(String codiceQuest, String risposta, String email) {
         String line = codiceQuest + "," + risposta + "," + email + "," + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         List<String> lines = new ArrayList<>();
@@ -76,7 +93,6 @@ public class QuestionarioFileSystemDAO {
                 bw.newLine();
             }
         } catch (IOException e) {
-            System.err.println("Errore nella scrittura del file: " + e.getMessage());
             return false;
         }
         return true;

@@ -1,10 +1,9 @@
 package com.example.progetto_ispw.controller;
+
 import com.example.progetto_ispw.dao.MasterDAO;
 import com.example.progetto_ispw.model.User;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
+
 
 public class LoginUserController {
 
@@ -67,7 +66,6 @@ public class LoginUserController {
                 return true;
             }
         } catch (WrongLoginException e) {
-            System.err.println("errore nel login: " + e.getMessage());
         }
         return false;
     }

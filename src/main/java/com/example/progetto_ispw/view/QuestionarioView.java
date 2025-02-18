@@ -20,24 +20,34 @@ public class QuestionarioView extends Application {
         this.stage = stage;
         stage.setTitle("Questionario");
 
+        // Ottengo l'istanza del MasterController, che gestisce la logica principale dell'applicazione
         MasterController masterController = MasterController.getInstance();
+
+        // Recupero il questionario attualmente attivo, che verrà mostrato all'utente
         Questionario questionario = masterController.getQuestionario();
 
         if (questionario != null) {
 
             VBox vbox = new VBox(10);
             Label domandaLabel = new Label(questionario.getDomanda());
+            // Imposto lo stile dell'etichetta: testo in grassetto e dimensione del font
             domandaLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
             vbox.setPadding(new Insets(20, 20, 20, 20));
             vbox.getChildren().addAll(domandaLabel);
 
-            //per ogni risposta possibile mi creo un bottone, se lo clicco...
+            /**
+             * Itera su tutte le possibili risposte del questionario e crea un pulsante
+             * per ogni risposta disponibile
+             */
             for (String risposta : questionario.getPossibiliRisposte()) {
-                System.out.println(risposta);
                 Button voteButton = new Button(risposta);
                 voteButton.setOnAction(event -> {
-                    //prendi la risposta del bottone che ho schiacciato e mettila dentro votedQuest(risposta) qui sotto
-                    System.out.println(risposta);
+                    /**
+                     * Registro la risposta selezionata dall'utente nel sistema, per passare
+                     * alla prossima domanda del questionario: aggiorno la vista per mostrare
+                     * la nuova domanda all'utente
+                     * @param risposta la risposta selezionata dall'utente
+                     */
                     masterController.votedQuest(risposta);
                     MasterController.getInstance().nextQuest();
                     MasterView.getInstance().showQuestionarioView();
@@ -51,6 +61,10 @@ public class QuestionarioView extends Application {
                 masterView.showHomePageView();
             });
 
+            /**
+             * passo alla prossima domanda del questionario: aggiorno la vista per mostrare
+             * la nuova domanda all'utente
+             */
             Button skipButton = new Button("Prossima domanda");
             skipButton.setOnAction(event -> {
                 MasterController.getInstance().nextQuest();
@@ -64,9 +78,9 @@ public class QuestionarioView extends Application {
             vbox.getChildren().add(navigationBox);
 
             ScrollPane scrollPane = new ScrollPane(vbox);
-            scrollPane.setFitToWidth(true); // Fai in modo che il contenuto si adatti alla larghezza
+            scrollPane.setFitToWidth(true);
 
-
+            //set scene
             Scene scene = new Scene(scrollPane);
             stage.setScene(scene);
             stage.show();

@@ -16,15 +16,29 @@ public class QuestionarioController {
     private int currentQuestCercati;
     private boolean ricercati = false;
 
+    /**
+     * Costruttore privato della classe. Inizializza i questionari disponibili
+     * e imposta l'indice corrente della domanda.
+     */
     private QuestionarioController() {
         setupQuestionari();
     }
 
+    /**
+     * Inizializza la lista di questionari disponibili recuperandoli dal database
+     * tramite il DAO e imposta l'indice del questionario corrente a 0.
+     */
     protected void setupQuestionari(){
         this.questionarios = MasterDAO.getInstance().getQuestionarios();
         this.currentQuest = 0;
     }
 
+    /**
+     * Restituisce l'istanza singleton di QuestionarioController.
+     * Se l'istanza non esiste, viene creata una nuova istanza.
+     *
+     * @return l'istanza unica di QuestionarioController
+     */
     public static QuestionarioController getInstance() {
         if(instance==null) {
             instance = new QuestionarioController();
@@ -32,6 +46,12 @@ public class QuestionarioController {
         return instance;
     }
 
+    /**
+     * Se non è stata eseguita una ricerca, restituisce il questionario dalla lista principale.
+     * Se è stata eseguita una ricerca, restituisce il questionario dalla lista dei "cercati".
+     *
+     * @return il questionario corrente, o null se non ci sono più domande disponibili
+     */
     public Questionario getQuestionario() {
         if (!ricercati) {
             if (questionarios == null || currentQuest >= questionarios.size()) {
@@ -58,10 +78,21 @@ public class QuestionarioController {
         return MasterDAO.getInstance().votedQuest( codiceQuest, risposta, email);
     }
 
+    /**
+     * Disabilita la modalità di ricerca, tornando alla visualizzazione dei questionari originali.
+     */
     public void disattivaRicerca() {
         this.ricercati = false;
     }
 
+    /**
+     * Calcola la distanza di Levenshtein tra due stringhe, che rappresenta il numero minimo di operazioni
+     * necessarie per trasformare una stringa nell'altra.
+     *
+     * @param s1 la prima stringa da confrontare
+     * @param s2 la seconda stringa da confrontare
+     * @return la distanza di Levenshtein tra le due stringhe
+     */
     public static int levCalculate(String s1, String s2) {
         int len1 = s1.length();
         int len2 = s2.length();
@@ -108,12 +139,19 @@ public class QuestionarioController {
         list.sort(Comparator.comparingInt(p -> p.getValue()));
         for (Map.Entry<Questionario, Integer> entry : list ) {
             questionariCercati.add(entry.getKey());
-            System.out.println(entry.getKey().getDomanda());
-            System.out.println(entry.getValue());
         }
         this.ricercati= true;
     }
 
+    /**
+     * Controlla se ci sono questionari che corrispondono all'input di ricerca.
+     * Calcola la distanza di Levenshtein tra l'input e i testi delle domande, risposte e argomenti.
+     * Se la distanza è inferiore o uguale a 2, il questionario viene aggiunto ai risultati della ricerca.
+     *
+     * @param input la parola chiave fornita dall'utente per la ricerca
+     * @return una mappa contenente i questionari e la loro distanza di Levenshtein rispetto all'input
+     * @throws NonTrovatoException se non ci sono questionari che corrispondono alla ricerca
+     */
     private HashMap<Questionario, Integer> controllaRicerca(String input) throws NonTrovatoException {
 
         HashMap<Questionario, Integer> levVal = new HashMap<>();

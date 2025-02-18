@@ -1,13 +1,8 @@
 package com.example.progetto_ispw.controller;
 
-import com.example.progetto_ispw.dao.LoginUserDAO;
 import com.example.progetto_ispw.model.Questionario;
 import com.example.progetto_ispw.model.User;
-import com.example.progetto_ispw.view.MasterView;
 
-import java.sql.CallableStatement;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class TestController {
 

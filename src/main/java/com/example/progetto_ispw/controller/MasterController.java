@@ -17,8 +17,14 @@ import java.util.List;
 public class MasterController {
 
     private static MasterController instance;
+    //Costruttore privato per impedire l'istanza diretta della classe dall'esterno.
     private MasterController() {}
 
+    /**
+     * Restituisce l'istanza unica della classe MasterController (pattern singleton ).
+     *
+     * @return l'istanza del MasterController
+     */
     public static MasterController getInstance() {
         if(instance==null) {
             instance = new MasterController();
@@ -62,6 +68,11 @@ public class MasterController {
         return LoginUserController.getInstance().getUser();
     }
 
+    /**
+     * Restituisce la lista delle collaborazioni per l'utente corrente.
+     *
+     * @return una lista di coppie (chiave, valore) delle collaborazioni dell'utente
+     */
     public List<AbstractMap.SimpleEntry<String, String>> getCollabs() {
         CollabsController cc = new CollabsController();
         String email = getCurrentUser().getEmail();
@@ -71,6 +82,7 @@ public class MasterController {
     public void disattivaRicerca() {
         QuestionarioController.getInstance().disattivaRicerca();
     }
+
 
     public void searchQuest(String resultLabel) {
         QuestionarioController.getInstance().cercaQuest(resultLabel);

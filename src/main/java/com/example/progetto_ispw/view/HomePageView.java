@@ -17,15 +17,19 @@ import javafx.stage.Stage;
 public class HomePageView extends Application {
 
     /**
-     *
+     * funzione che permette all'utente di visualizzare la home page.
      * @param stage
      */
+
     @Override
     public void start(Stage stage) {
         stage.setTitle("Homepage");
+
+        // Ottengo l'istanza del MasterController, che gestisce la logica principale dell'applicazione
         MasterController masterController = MasterController.getInstance();
 
         Label domandaLabel = new Label("Salve! Cosa vuoi fare oggi?");
+        // Imposto lo stile della label (dimensione del font e grassetto)
         domandaLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
 
         Label searchLabel = new Label("Inserisci il testo da cercare:");
@@ -34,9 +38,9 @@ public class HomePageView extends Application {
 
         Button schedaPersonaleButton = new Button("La tua scheda");
         Button votaButton = new Button("Rispondi ai questionari consigliati");
-        //Button statisticheButton = new Button("Visualizza qualche statistica");
 
         Button searchButton = new Button("Cerca");
+        // Imposto una larghezza predefinita per il pulsante di ricerca
         searchButton.setPrefWidth(100);
 
         Label resultLabel = new Label();
@@ -53,7 +57,9 @@ public class HomePageView extends Application {
         });
 
         searchButton.setOnAction(event -> {
+            // Ottengo il testo inserito dall'utente nel campo di ricerca
             String ricerca = searchField.getText();
+            // Controllo sul campo di ricerca
             if (ricerca.isEmpty()) {
                 resultLabel.setText("Per favore, inserisci testo da cercare.");
             }
@@ -61,7 +67,9 @@ public class HomePageView extends Application {
                 resultLabel.setText("Caratteri non validi, per favore riprova");
             }
             else {
+                // Passa la ricerca al controller per eseguire la ricerca dei questionari
                 masterController.searchQuest(ricerca);
+                // Mostro la vista dei questionari in base ai risultati della ricerca
                 MasterView.getInstance().showQuestionarioView();
             }
         });
@@ -90,7 +98,6 @@ public class HomePageView extends Application {
         gridPane.add(searchField, 1, 2);
         gridPane.add(schedaPersonaleButton, 0, 3);
         gridPane.add(votaButton, 0, 4);
-        //gridPane.add(statisticheButton, 0, 4);
         gridPane.add(searchButton, 2, 2);
         gridPane.add(resultLabel, 0,5);
 
@@ -104,10 +111,8 @@ public class HomePageView extends Application {
         scrollPane.setContent(vbox);
         scrollPane.setFitToWidth(true);
 
-        //Scene scene = new Scene(scrollPane, 400, 300);
         Scene scene = new Scene(scrollPane);
         stage.setScene(scene);
-        //stage.sizeToScene();
         stage.show();
     }
 }

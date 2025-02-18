@@ -10,10 +10,20 @@ public class QuestionarioDAO {
 
     Connection connection;
 
+    /**
+     * Costruttore che inizializza la connessione al database.
+     *
+     * @param connection la connessione al database.
+     */
     protected QuestionarioDAO(Connection connection) {
         this.connection = connection;
     }
 
+    /**
+     * Recupera una lista di questionari dal database per l'utente corrente.
+     *
+     * @return una lista di oggetti Questionario contenenti i dati letti dal database.
+     */
     protected ArrayList<Questionario> getQuestionarios() {
         ArrayList<Questionario> questionarios = new ArrayList<>();
         CallableStatement callablestatement = null;
@@ -34,11 +44,18 @@ public class QuestionarioDAO {
             }
             return questionarios;
         } catch (SQLException e) {
-            System.err.println("Errore " + e.getMessage());
             return null;
         }
     }
 
+    /**
+     * Registra la risposta di un utente a un questionario nel database.
+     *
+     * @param codiceQuest il codice identificativo del questionario.
+     * @param risposta la risposta dell'utente.
+     * @param email l'email dell'utente che ha votato.
+     * @return true se la votazione è stata registrata correttamente, false altrimenti.
+     */
     protected boolean votedQuest(String codiceQuest, String risposta, String email){
 
         CallableStatement cs = null;
@@ -52,18 +69,16 @@ public class QuestionarioDAO {
             cs.executeQuery();
 
         } catch (SQLException e) {
-            System.err.println("errore nella votazione: " + e.getMessage());
+            // Gestione degli errori durante l'esecuzione della votazione
             throw new RuntimeException(e);
         } finally {
             if (cs != null) {
                 try {
                     cs.close();  // Chiudere lo Statement per liberare risorse
                 } catch (SQLException e) {
-                    System.err.println("Errore durante la chiusura dello statement: " + e.getMessage());
                 }
             }
         }
-        System.out.println("votato correttamente");
         return true;
     }
 }

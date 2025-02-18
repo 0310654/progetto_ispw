@@ -10,6 +10,11 @@ import java.util.ArrayList;
 public class LoginUserDAO {
     Connection connection;
 
+    /**
+     * Costruttore che inizializza la connessione al database.
+     *
+     * @param connection la connessione al database.
+     */
     public LoginUserDAO (Connection connection) {
         this.connection = connection;
     }
